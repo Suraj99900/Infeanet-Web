@@ -1,0 +1,9 @@
+{
+    "require": {
+        "doctrine/dbal": "^4.0",
+        "tecnickcom/tcpdf": "^6.8",
+        "phpoffice/phpspreadsheet": "^3.8",
+        "phpmailer/phpmailer": "^6.9",
+        "tinymce/tinymce": "^8.2"
+    }
+}
