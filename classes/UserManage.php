@@ -171,7 +171,7 @@ class UserManage
         $sSemesterTable = "student_semester";
 
         $oQueryBuilder
-            ->select("*")
+            ->select("*,A.id")
             ->from($sTableName,'A')
             ->leftjoin('A', $sSemesterTable ,'B','A.class_id = B.id')
             ->where('A.status = :iStatus')

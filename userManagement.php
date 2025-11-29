@@ -17,6 +17,28 @@ include_once "adminNavBar.php";
 include_once "leftBar.php";
 ?>
 
+<style>
+    .dynamic-width {
+        width: 450px;
+    }
+
+    .offcanvas-body h6 {
+        font-size: 15px;
+    }
+
+    .offcanvas .form-control {
+        border-radius: 8px;
+    }
+
+    .offcanvas .btn-primary {
+        border-radius: 8px;
+    }
+
+    .offcanvas .btn-secondary {
+        border-radius: 8px;
+    }
+</style>
+
 
 <main id="main" class="main">
 
@@ -113,112 +135,161 @@ include_once "leftBar.php";
 
 <!-- Add/Update User Off-Canvas -->
 <div class="offcanvas offcanvas-end dynamic-width" tabindex="-1" id="AddUserOffCanvasId">
-    <div class="offcanvas-header">
-        <h5>Add User</h5>
+    <div class="offcanvas-header border-bottom">
+        <h5 class="fw-bold"><i class="fa-solid fa-user-plus me-2"></i>Add New User</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
     </div>
 
     <div class="offcanvas-body">
-        <form id="userForm">
+
+        <form id="userForm" class="needs-validation" novalidate>
             <input type="hidden" id="userId" name="userId">
 
-            <div class="row">
-                <div class="col-sm-6 mb-3">
-                    <label>User Name</label>
-                    <input type="text" class="form-control" id="username" name="username" required>
-                </div>
+            <!-- User Info Section -->
+            <div class="mb-3">
+                <h6 class="fw-bold text-primary mb-3"><i class="fa-solid fa-id-card-clip me-2"></i>User Information</h6>
+                <div class="row g-3">
 
-                <div class="col-sm-6 mb-3">
-                    <label>Email</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
+                    <div class="col-sm-6">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Enter full name" required>
+                    </div>
 
-                <div class="col-sm-6 mb-3">
-                    <label>Password</label>
-                    <input type="password" class="form-control" id="password" name="password" required>
-                </div>
+                    <div class="col-sm-6">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="user@example.com" required>
+                    </div>
 
-                <div class="col-sm-6 mb-3">
-                    <label>Phone</label>
-                    <input type="text" class="form-control" id="phone" name="phoneNumber" required>
-                </div>
+                    <div class="col-sm-6">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Set a password" required>
+                    </div>
 
-                <div class="col-sm-6 mb-3">
-                    <label>User Type</label>
-                    <select id="userType" name="userType" class="form-control" required>
-                        <option value="">Select User Type</option>
-                        <option value="1">Admin</option>
-                        <option value="2">Student</option>
-                    </select>
-                </div>
+                    <div class="col-sm-6">
+                        <label class="form-label">Phone Number</label>
+                        <input type="text" class="form-control" id="phone" name="phoneNumber" placeholder="Enter phone number" required>
+                    </div>
 
-                <!-- SEMESTER SELECT (hidden for admin) -->
-                <div class="col-sm-6 mb-3 d-none" id="semesterBox">
-                    <label>Student Semester</label>
-                    <select id="semesterId" name="class_id" class="form-control select2">
-                        <option value="">Select Semester</option>
-                    </select>
                 </div>
-
             </div>
 
-            <button type="submit" class="btn btn-primary">Save</button>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="offcanvas">Cancel</button>
+            <hr>
+
+            <!-- User Role Section -->
+            <div class="mb-3">
+                <h6 class="fw-bold text-primary mb-3"><i class="fa-solid fa-user-gear me-2"></i>User Role</h6>
+                <div class="row g-3">
+
+                    <div class="col-sm-6">
+                        <label class="form-label">User Type</label>
+                        <select id="userType" name="userType" class="form-control" required>
+                            <option value="">Select User Type</option>
+                            <option value="1">Admin</option>
+                            <option value="2">Student</option>
+                        </select>
+                    </div>
+
+                    <!-- Semester (Shown only for Student) -->
+                    <div class="col-sm-6 d-none" id="semesterBox">
+                        <label class="form-label">Semester</label>
+                        <select id="semesterId" name="class_id" class="form-control select2">
+                            <option value="">Select Semester</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="d-flex justify-content-end gap-2 mt-4">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="offcanvas">Cancel</button>
+                <button type="submit" class="btn btn-primary shadow-sm px-4">Save User</button>
+            </div>
         </form>
+
     </div>
 </div>
 
 
 <!-- Update User Off-Canvas -->
-<div class="offcanvas offcanvas-end dynamic-width" tabindex="-1" id="UpdateUserOffCanvasId" aria-labelledby="UpdateUserOffCanvasLabel">
-    <div class="offcanvas-header">
-        <h5 id="UpdateUserOffCanvasLabel">Update User</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<!-- Update User Off-Canvas -->
+<div class="offcanvas offcanvas-end dynamic-width" tabindex="-1" id="UpdateUserOffCanvasId">
+    <div class="offcanvas-header border-bottom">
+        <h5 class="fw-bold"><i class="fa-solid fa-user-pen me-2"></i>Update User</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
     </div>
+
     <div class="offcanvas-body">
         <form id="updateUserForm">
-            <input type="hidden" id="updateUserId" name="userId" value="">
-            <div class="row">
-                <div class="col-lg col-sm-3 mb-3">
-                    <label for="updateUserName" class="form-label">User Name</label>
-                    <input type="text" class="form-control" id="updateUserName" name="username" placeholder="Enter user name" required>
-                </div>
+            <input type="hidden" id="updateUserId" name="userId">
 
-                <div class="col-lg col-sm-3 mb-3">
-                    <label for="updateEmail" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="updateEmail" name="email" placeholder="Enter email" required>
-                </div>
-                <div class="col-lg col-sm-3 mb-3">
-                    <label for="updatePassword" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="updatePassword" name="password" placeholder="Enter password">
-                </div>
-                <div class="col-lg col-sm-3 mb-3">
-                    <label for="updatePhone" class="form-label">Phone</label>
-                    <input type="text" class="form-control" id="updatePhone" name="phoneNumber" placeholder="Enter phone number" required>
-                </div>
-                <div class="col-sm-6 mb-3">
-                    <label>User Type</label>
-                    <select id="updateUserType" name="userType" class="form-control" required>
-                        <option value="">Select User Type</option>
-                        <option value="1">Admin</option>
-                        <option value="2">Student</option>
-                    </select>
-                </div>
+            <!-- User Info -->
+            <div class="mb-3">
+                <h6 class="fw-bold text-primary mb-3"><i class="fa-solid fa-id-card me-2"></i>User Information</h6>
 
-                <!-- SEMESTER SELECT -->
-                <div class="col-sm-6 mb-3 d-none" id="updateSemesterBox">
-                    <label>Student Semester</label>
-                    <select id="updateSemesterId" name="class_id" class="form-control select2">
-                        <option value="">Select Semester</option>
-                    </select>
-                </div>
+                <div class="row g-3">
 
+                    <div class="col-sm-6">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="updateUserName" name="username" required>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="updateEmail" name="email" required>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label class="form-label">Password (optional)</label>
+                        <input type="password" class="form-control" id="updatePassword" name="password" placeholder="Leave blank to keep same">
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label class="form-label">Phone Number</label>
+                        <input type="text" class="form-control" id="updatePhone" name="phoneNumber" required>
+                    </div>
+
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary">Update</button>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="offcanvas">Cancel</button>
+
+            <hr>
+
+            <!-- Role Section -->
+            <div class="mb-3">
+                <h6 class="fw-bold text-primary mb-3"><i class="fa-solid fa-users-gear me-2"></i>User Role</h6>
+                <div class="row g-3">
+
+                    <div class="col-sm-6">
+                        <label class="form-label">User Type</label>
+                        <select id="updateUserType" name="userType" class="form-control" required>
+                            <option value="">Select User Type</option>
+                            <option value="1">Admin</option>
+                            <option value="2">Student</option>
+                        </select>
+                    </div>
+
+                    <div class="col-sm-6 d-none" id="updateSemesterBox">
+                        <label class="form-label">Semester</label>
+                        <select id="updateSemesterId" name="class_id" class="form-control select2">
+                            <option value="">Select Semester</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="d-flex justify-content-end gap-2 mt-4">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="offcanvas">Cancel</button>
+                <button type="submit" class="btn btn-primary shadow-sm px-4">Update User</button>
+            </div>
+
         </form>
     </div>
 </div>
+
 
 
 <?php include_once "cdn_admin_footer.php"; ?>

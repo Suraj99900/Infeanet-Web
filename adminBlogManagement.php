@@ -87,10 +87,11 @@ include_once "leftBar.php";
                                                 <thead class="table-dark">
                                                     <tr>
                                                         <th>Sr. No</th>
-                                                        <th>Blog ID</th>
                                                         <th>Title</th>
                                                         <th>Category</th>
-                                                        <th>Status</th>
+                                                        <th>Author Name</th>
+                                                        <th>Thumbnail</th>
+                                                        <th>Content</th>
                                                         <th>Actions</th>
                                                     </tr>
                                                 </thead>

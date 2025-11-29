@@ -3,111 +3,302 @@ include_once "config.php";
 include_once ABS_PATH_TO_PROJECT . "classes/sessionCheck.php";
 include_once ABS_PATH_TO_PROJECT . 'CDN_Header.php';
 include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
-
 ?>
+
 <div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcumb-bg.jpg">
     <div class="container">
         <div class="breadcumb-content">
-            <h1 class="breadcumb-title">Frequently Asked Question</h1>
+            <h1 class="breadcumb-title">Frequently Asked Questions</h1>
             <ul class="breadcumb-menu">
                 <li><a href="index.php">Home</a></li>
-                <li>Frequently Asked Question</li>
+                <li>Frequently Asked Questions</li>
             </ul>
         </div>
     </div>
 </div>
+
 <div class="space">
     <div class="container">
-        <div class="title-area text-center"><span class="sub-title">
-                <div class="icon-masking me-2"><span class="mask-icon" data-mask-src="assets/img/theme-img/title_shape_2.svg"></span> <img src="assets/img/theme-img/title_shape_2.svg" alt="shape"></div>FAQ
+        <div class="title-area text-center mb-5">
+            <span class="sub-title">
+                <div class="icon-masking me-2">
+                    <span class="mask-icon" data-mask-src="assets/img/theme-img/title_shape_2.svg"></span>
+                    <img src="assets/img/theme-img/title_shape_2.svg" alt="shape">
+                </div>
+                FAQ
             </span>
             <h2 class="sec-title">Talk To About Any <span class="text-theme">Question?</span></h2>
+            <p class="small text-muted">Below you'll find answers for Business Clients, Students & Interns, and detailed service questions.</p>
         </div>
-        <div class="row">
+
+        <div class="row gy-4">
+            <!-- LEFT: Business Clients + Services -->
             <div class="col-xl-6">
-                <div class="accordion-area accordion" id="faqAccordion">
-                    <div class="accordion-card style2">
-                        <div class="accordion-header" id="collapse-item-1"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="false" aria-controls="collapse-1">Where can I get analytics help?</button></div>
-                        <div id="collapse-1" class="accordion-collapse collapse" aria-labelledby="collapse-item-1" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                <p class="faq-text">Dramatically disseminate real-time portals rather than top-line action items. Uniquely provide access to low-risk high-yield products without dynamic products. Progressively re-engineer low-risk high-yield ideas rather than emerging alignments.</p>
+                <!-- Category 1: Business Clients -->
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="mb-3">📌 Category 1: <strong>For Business Clients</strong></h4>
+                        <div class="accordion" id="faqBusinessAccordion">
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="biz-heading-1">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#biz-collapse-1" aria-expanded="false" aria-controls="biz-collapse-1">
+                                        1. What services does Infeanet Technology provide?
+                                    </button>
+                                </h2>
+                                <div id="biz-collapse-1" class="accordion-collapse collapse" aria-labelledby="biz-heading-1" data-bs-parent="#faqBusinessAccordion">
+                                    <div class="accordion-body">
+                                        We offer complete digital and IT solutions including Web Development, Artificial Intelligence & Machine Learning, UI/UX Design, Cloud & DevOps services, Business Analysis, and Digital Marketing (SEO).
+                                    </div>
+                                </div>
                             </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="biz-heading-2">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#biz-collapse-2" aria-expanded="false" aria-controls="biz-collapse-2">
+                                        2. How do you ensure high-quality project delivery?
+                                    </button>
+                                </h2>
+                                <div id="biz-collapse-2" class="accordion-collapse collapse" aria-labelledby="biz-heading-2" data-bs-parent="#faqBusinessAccordion">
+                                    <div class="accordion-body">
+                                        Our 4-stage workflow — Select Project → Analyze → Plan & Execute → Deliver — ensures clarity, transparency, and timely results with zero compromise on quality.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="biz-heading-3">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#biz-collapse-3" aria-expanded="false" aria-controls="biz-collapse-3">
+                                        3. Which technologies do your teams work with?
+                                    </button>
+                                </h2>
+                                <div id="biz-collapse-3" class="accordion-collapse collapse" aria-labelledby="biz-heading-3" data-bs-parent="#faqBusinessAccordion">
+                                    <div class="accordion-body">
+                                        We use modern and scalable technologies including cloud platforms (AWS, Azure, GCP), full-stack web technologies (React, Node.js, PHP, Python), and advanced AI/ML frameworks like TensorFlow, Scikit-Learn, and PyTorch.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="biz-heading-4">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#biz-collapse-4" aria-expanded="false" aria-controls="biz-collapse-4">
+                                        4. Do you provide AI and automation-based business solutions?
+                                    </button>
+                                </h2>
+                                <div id="biz-collapse-4" class="accordion-collapse collapse" aria-labelledby="biz-heading-4" data-bs-parent="#faqBusinessAccordion">
+                                    <div class="accordion-body">
+                                        Yes. We build smart automation tools, predictive analytics systems, chatbots, recommendation engines, and AI-powered dashboards tailored to your business needs.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="biz-heading-5">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#biz-collapse-5" aria-expanded="false" aria-controls="biz-collapse-5">
+                                        5. How do you communicate progress during the project?
+                                    </button>
+                                </h2>
+                                <div id="biz-collapse-5" class="accordion-collapse collapse" aria-labelledby="biz-heading-5" data-bs-parent="#faqBusinessAccordion">
+                                    <div class="accordion-body">
+                                        We maintain regular updates through emails, review meetings, and a shared progress dashboard to keep clients involved at every step.
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-                    <div class="accordion-card style2 active">
-                        <div class="accordion-header" id="collapse-item-2"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="true" aria-controls="collapse-2">How long should a business plan be?</button></div>
-                        <div id="collapse-2" class="accordion-collapse collapse show" aria-labelledby="collapse-item-2" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                <p class="faq-text">Dramatically disseminate real-time portals rather than top-line action items. Uniquely provide access to low-risk high-yield products without dynamic products. Progressively re-engineer low-risk high-yield ideas rather than emerging alignments.</p>
+                </div>
+
+                <!-- Service-specific Q&A -->
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h4 class="mb-3">Services — Quick Questions</h4>
+
+                        <div class="accordion" id="servicesAccordion">
+
+                            <!-- Web Development -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="svc-heading-1">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#svc-collapse-1" aria-expanded="false" aria-controls="svc-collapse-1">
+                                        🖥️ Web Development — Do you build both static and dynamic websites?
+                                    </button>
+                                </h2>
+                                <div id="svc-collapse-1" class="accordion-collapse collapse" aria-labelledby="svc-heading-1" data-bs-parent="#servicesAccordion">
+                                    <div class="accordion-body">
+                                        Yes — we develop everything from business landing pages to full-featured web portals and e-commerce platforms. We also modernize existing sites, improve performance, and optimize for SEO and mobile responsiveness.
+                                    </div>
+                                </div>
                             </div>
+
+                            <!-- AI & ML -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="svc-heading-2">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#svc-collapse-2" aria-expanded="false" aria-controls="svc-collapse-2">
+                                        🤖 AI & ML — What types of AI/ML solutions do you offer?
+                                    </button>
+                                </h2>
+                                <div id="svc-collapse-2" class="accordion-collapse collapse" aria-labelledby="svc-heading-2" data-bs-parent="#servicesAccordion">
+                                    <div class="accordion-body">
+                                        We develop predictive analytics models, automation tools, chatbots, recommendation systems, and data-driven decision platforms. Yes — AI can be customized to your specific business workflow and goals.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- UI/UX -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="svc-heading-3">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#svc-collapse-3" aria-expanded="false" aria-controls="svc-collapse-3">
+                                        🎨 UI/UX Design — How do you ensure the best user experience?
+                                    </button>
+                                </h2>
+                                <div id="svc-collapse-3" class="accordion-collapse collapse" aria-labelledby="svc-heading-3" data-bs-parent="#servicesAccordion">
+                                    <div class="accordion-body">
+                                        We conduct user research, create interactive prototypes, and follow usability standards to deliver visually appealing and intuitive designs for both web and mobile.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SEO -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="svc-heading-4">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#svc-collapse-4" aria-expanded="false" aria-controls="svc-collapse-4">
+                                        📈 Digital Marketing (SEO) — Will SEO help my business get more leads?
+                                    </button>
+                                </h2>
+                                <div id="svc-collapse-4" class="accordion-collapse collapse" aria-labelledby="svc-heading-4" data-bs-parent="#servicesAccordion">
+                                    <div class="accordion-body">
+                                        Absolutely — our SEO strategies improve search visibility, drive organic traffic, and convert visitors into customers. We offer ongoing monthly support.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Business Analysis -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="svc-heading-5">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#svc-collapse-5" aria-expanded="false" aria-controls="svc-collapse-5">
+                                        🧩 Business Analysis — How does this help my project?
+                                    </button>
+                                </h2>
+                                <div id="svc-collapse-5" class="accordion-collapse collapse" aria-labelledby="svc-heading-5" data-bs-parent="#servicesAccordion">
+                                    <div class="accordion-body">
+                                        Our analysts translate business needs into clear technical requirements, reducing risk and improving efficiency. We provide documentation, user flows and wireframes.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cloud & DevOps -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="svc-heading-6">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#svc-collapse-6" aria-expanded="false" aria-controls="svc-collapse-6">
+                                        ☁️ Cloud Services & DevOps — Do you migrate systems to cloud?
+                                    </button>
+                                </h2>
+                                <div id="svc-collapse-6" class="accordion-collapse collapse" aria-labelledby="svc-heading-6" data-bs-parent="#servicesAccordion">
+                                    <div class="accordion-body">
+                                        Yes — we assist in cloud migration (AWS, Azure, GCP) and implement CI/CD pipelines, automated deployments and monitoring for reliability and scalability.
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-                    <div class="accordion-card style2">
-                        <div class="accordion-header" id="collapse-item-3"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">Do I need a business plan?</button></div>
-                        <div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="collapse-item-3" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                <p class="faq-text">Dramatically disseminate real-time portals rather than top-line action items. Uniquely provide access to low-risk high-yield products without dynamic products. Progressively re-engineer low-risk high-yield ideas rather than emerging alignments.</p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT: Students & Interns + Contact CTA -->
+            <div class="col-xl-6">
+                <!-- Category 2: Students & Interns -->
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="mb-3">🎓 Category 2: <strong>For Students & Interns</strong></h4>
+                        <div class="accordion" id="faqStudentAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="stu-heading-1">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#stu-collapse-1" aria-expanded="false" aria-controls="stu-collapse-1">
+                                        6. What kind of training programs do you offer?
+                                    </button>
+                                </h2>
+                                <div id="stu-collapse-1" class="accordion-collapse collapse" aria-labelledby="stu-heading-1" data-bs-parent="#faqStudentAccordion">
+                                    <div class="accordion-body">
+                                        Practical, industry-ready training in Web Development, AI/ML, UI/UX, and Cloud/DevOps — focused on real skills companies want.
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="accordion-card style2">
-                        <div class="accordion-header" id="collapse-item-4"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">How To Choose A Good QA Consultant?</button></div>
-                        <div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="collapse-item-4" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                <p class="faq-text">Dramatically disseminate real-time portals rather than top-line action items. Uniquely provide access to low-risk high-yield products without dynamic products. Progressively re-engineer low-risk high-yield ideas rather than emerging alignments.</p>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="stu-heading-2">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#stu-collapse-2" aria-expanded="false" aria-controls="stu-collapse-2">
+                                        7. Will I get to work on live projects?
+                                    </button>
+                                </h2>
+                                <div id="stu-collapse-2" class="accordion-collapse collapse" aria-labelledby="stu-heading-2" data-bs-parent="#faqStudentAccordion">
+                                    <div class="accordion-body">
+                                        Yes — students contribute to real client projects to learn complete project execution from planning to deployment.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="stu-heading-3">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#stu-collapse-3" aria-expanded="false" aria-controls="stu-collapse-3">
+                                        8. Is this training suitable for beginners?
+                                    </button>
+                                </h2>
+                                <div id="stu-collapse-3" class="accordion-collapse collapse" aria-labelledby="stu-heading-3" data-bs-parent="#faqStudentAccordion">
+                                    <div class="accordion-body">
+                                        Absolutely — mentors guide you step-by-step from basics to professional tasks.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="stu-heading-4">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#stu-collapse-4" aria-expanded="false" aria-controls="stu-collapse-4">
+                                        9. Will I receive certification after completion?
+                                    </button>
+                                </h2>
+                                <div id="stu-collapse-4" class="accordion-collapse collapse" aria-labelledby="stu-heading-4" data-bs-parent="#faqStudentAccordion">
+                                    <div class="accordion-body">
+                                        Yes — every student receives an Internship & Project Experience Certificate to strengthen resumes and placements.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="stu-heading-5">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#stu-collapse-5" aria-expanded="false" aria-controls="stu-collapse-5">
+                                        10. How does Infeanet Technology help with career growth?
+                                    </button>
+                                </h2>
+                                <div id="stu-collapse-5" class="accordion-collapse collapse" aria-labelledby="stu-heading-5" data-bs-parent="#faqStudentAccordion">
+                                    <div class="accordion-body">
+                                        We develop your technical & soft skills and give exposure to corporate workflows to prepare you for industry roles.
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-6">
-                <div class="accordion-area accordion" id="faqAccordion2">
-                    <div class="accordion-card style2">
-                        <div class="accordion-header" id="collapse-item-5"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">What is off page SEO link building?</button></div>
-                        <div id="collapse-5" class="accordion-collapse collapse" aria-labelledby="collapse-item-5" data-bs-parent="#faqAccordion2">
-                            <div class="accordion-body">
-                                <p class="faq-text">Dramatically disseminate real-time portals rather than top-line action items. Uniquely provide access to low-risk high-yield products without dynamic products. Progressively re-engineer low-risk high-yield ideas rather than emerging alignments.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-card style2">
-                        <div class="accordion-header" id="collapse-item-6"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-6" aria-expanded="false" aria-controls="collapse-6">Best SEO Practices for Page Layouts</button></div>
-                        <div id="collapse-6" class="accordion-collapse collapse" aria-labelledby="collapse-item-6" data-bs-parent="#faqAccordion2">
-                            <div class="accordion-body">
-                                <p class="faq-text">Dramatically disseminate real-time portals rather than top-line action items. Uniquely provide access to low-risk high-yield products without dynamic products. Progressively re-engineer low-risk high-yield ideas rather than emerging alignments.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-card style2">
-                        <div class="accordion-header" id="collapse-item-7"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-7" aria-expanded="false" aria-controls="collapse-7">How can I order web design for my website?</button></div>
-                        <div id="collapse-7" class="accordion-collapse collapse" aria-labelledby="collapse-item-7" data-bs-parent="#faqAccordion2">
-                            <div class="accordion-body">
-                                <p class="faq-text">Dramatically disseminate real-time portals rather than top-line action items. Uniquely provide access to low-risk high-yield products without dynamic products. Progressively re-engineer low-risk high-yield ideas rather than emerging alignments.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-card style2">
-                        <div class="accordion-header" id="collapse-item-8"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-8" aria-expanded="false" aria-controls="collapse-8">Outsourced IT Services For Small Business?</button></div>
-                        <div id="collapse-8" class="accordion-collapse collapse" aria-labelledby="collapse-item-8" data-bs-parent="#faqAccordion2">
-                            <div class="accordion-body">
-                                <p class="faq-text">Dramatically disseminate real-time portals rather than top-line action items. Uniquely provide access to low-risk high-yield products without dynamic products. Progressively re-engineer low-risk high-yield ideas rather than emerging alignments.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-card style2">
-                        <div class="accordion-header" id="collapse-item-9"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-9" aria-expanded="false" aria-controls="collapse-9">Digital solution for your startup agency?</button></div>
-                        <div id="collapse-9" class="accordion-collapse collapse" aria-labelledby="collapse-item-9" data-bs-parent="#faqAccordion2">
-                            <div class="accordion-body">
-                                <p class="faq-text">Dramatically disseminate real-time portals rather than top-line action items. Uniquely provide access to low-risk high-yield products without dynamic products. Progressively re-engineer low-risk high-yield ideas rather than emerging alignments.</p>
-                            </div>
-                        </div>
+
+                <!-- CTA / Contact -->
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <h5 class="mb-2">Want to talk with us?</h5>
+                        <p class="small text-muted mb-3">Request a consultation or training information — we’ll get back to you.</p>
+                        <a href="contact.php" class="btn btn-primary mb-2">Contact Us</a>
+                        <a href="#contact-sec" class="btn btn-outline-secondary mb-2">Request a Quote</a>
                     </div>
                 </div>
+
             </div>
         </div>
+
     </div>
 </div>
-<div class="space" id="contact-sec" data-bg-src="assets/img/bg/form_bg_1.jpg">
+
+<!-- Contact / Quote section (kept as in original file) -->
+<!-- <div class="space" id="contact-sec" data-bg-src="assets/img/bg/form_bg_1.jpg">
     <div class="container">
         <div class="title-area text-center"><span class="sub-title">
                 <div class="icon-masking me-2"><span class="mask-icon" data-mask-src="assets/img/theme-img/title_shape_2.svg"></span> <img src="assets/img/theme-img/title_shape_2.svg" alt="shape"></div>GET A QUOTE
@@ -132,142 +323,6 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
             <p class="form-messages mb-0 mt-3"></p>
         </form>
     </div>
-</div>
-<footer class="footer-wrapper footer-layout1">
-    <div class="footer-top">
-        <div class="logo-bg"></div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-xl-3">
-                    <div class="footer-logo"><a class="icon-masking" href="index.php"><span data-mask-src="assets/img/logo-white.svg" class="mask-icon"></span><img src="assets/img/logo-white.svg" alt="Webteck"></a></div>
-                </div>
-                <div class="col-xl-9">
-                    <div class="footer-contact-wrap">
-                        <div class="footer-contact">
-                            <div class="footer-contact_icon"><i class="fas fa-phone"></i></div>
-                            <div class="media-body"><span class="footer-contact_text">Quick Call Us:</span> <a href="tel:+19088000393" class="footer-contact_link">+190-8800-0393</a></div>
-                        </div>
-                        <div class="footer-contact">
-                            <div class="footer-contact_icon"><i class="fas fa-envelope"></i></div>
-                            <div class="media-body"><span class="footer-contact_text">Mail Us On:</span> <a href="mailto:info@webteck.com" class="footer-contact_link">info@webteck.com</a></div>
-                        </div>
-                        <div class="footer-contact">
-                            <div class="footer-contact_icon"><i class="fas fa-location-dot"></i></div>
-                            <div class="media-body"><span class="footer-contact_text">Visit Location:</span> <a href="https://www.google.com/maps" class="footer-contact_link">54 Flemington, USA</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="widget-area">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-md-6 col-xxl-3 col-xl-4">
-                    <div class="widget footer-widget">
-                        <h3 class="widget_title">About Company</h3>
-                        <div class="th-widget-about">
-                            <p class="about-text">Professionally redefine transparent ROI through low-risk high-yield imperatives. Progressively create empowered. cost effective users via team driven.</p>
-                            <div class="th-social"><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a> <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a> <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a> <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a> <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-auto">
-                    <div class="widget widget_nav_menu footer-widget">
-                        <h3 class="widget_title">Quick Links</h3>
-                        <div class="menu-all-pages-container">
-                            <ul class="menu">
-                                <li><a href="about.php">About Us</a></li>
-                                <li><a href="team.php">Meet Our Team</a></li>
-                                <li><a href="project.php">Our Projects</a></li>
-                                <li><a href="faq.php">Help & FAQs</a></li>
-                                <li><a href="contact.php">Contact Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-auto">
-                    <div class="widget widget_nav_menu footer-widget">
-                        <h3 class="widget_title">IT SERVICES</h3>
-                        <div class="menu-all-pages-container">
-                            <ul class="menu">
-                                <li><a href="service-details.php">Web Development</a></li>
-                                <li><a href="service-details.php">Business Development</a></li>
-                                <li><a href="service-details.php">Product Management</a></li>
-                                <li><a href="service-details.php">UI/UX Design</a></li>
-                                <li><a href="service-details.php">Cloud services</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-auto">
-                    <div class="widget footer-widget">
-                        <h3 class="widget_title">Recent Posts</h3>
-                        <div class="recent-post-wrap">
-                            <div class="recent-post">
-                                <div class="media-img"><a href="blog-details.php"><img src="assets/img/blog/recent-post-2-1.jpg" alt="Blog Image"></a></div>
-                                <div class="media-body">
-                                    <h4 class="post-title"><a class="text-inherit" href="blog-details.php">Unsatiable entreaties may collecting Power.</a></h4>
-                                    <div class="recent-post-meta"><a href="blog.php"><i class="fal fa-calendar-days"></i>21 June, 2025</a></div>
-                                </div>
-                            </div>
-                            <div class="recent-post">
-                                <div class="media-img"><a href="blog-details.php"><img src="assets/img/blog/recent-post-2-2.jpg" alt="Blog Image"></a></div>
-                                <div class="media-body">
-                                    <h4 class="post-title"><a class="text-inherit" href="blog-details.php">Regional Manager limited time management.</a></h4>
-                                    <div class="recent-post-meta"><a href="blog.php"><i class="fal fa-calendar-days"></i>22 June, 2025</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="copyright-wrap bg-title">
-        <div class="container">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-lg-6">
-                    <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2025 <a href="https://themeforest.net/user/themeholy">Themeholy</a>. All Rights Reserved.</p>
-                </div>
-                <div class="col-lg-6 text-end d-none d-lg-block">
-                    <div class="footer-links">
-                        <ul>
-                            <li><a href="about.php">Terms & Condition</a></li>
-                            <li><a href="about.php">Careers</a></li>
-                            <li><a href="about.php">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="shape-left"><img src="assets/img/shape/footer_shape_2.svg" alt="shape"></div>
-    <div class="shape-right">
-        <div class="particle-1" id="particle-5"></div>
-    </div>
-</footer>
-<div class="scroll-top"><svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
-    </svg></div>
-<script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
-<script src="assets/js/swiper-bundle.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
-<script src="assets/js/jquery.counterup.min.js"></script>
-<script src="assets/js/circle-progress.js"></script>
-<script src="assets/js/jquery-ui.min.js"></script>
-<script src="assets/js/imagesloaded.pkgd.min.js"></script>
-<script src="assets/js/isotope.pkgd.min.js"></script>
-<script src="assets/js/tilt.jquery.min.js"></script>
-<script src="assets/js/gsap.min.js"></script>
-<script src="assets/js/ScrollTrigger.min.js"></script>
-<script src="assets/js/smooth-scroll.js"></script>
-<script src="assets/js/particles.min.js"></script>
-<script src="assets/js/particles-config.js"></script>
-<script src="assets/js/imageRevealHover.js"></script>
-<script src="assets/js/main.js"></script>
-</body>
-<!-- Mirrored from html.themehour.net/webteck/demo/faq.php by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 16 Nov 2025 13:10:36 GMT -->
+</div> -->
 
-</html>
+<?php include_once "CDN_Footer.php"; ?>

@@ -5,7 +5,6 @@ require_once "../classes/DB-Connection.php";
 require_once "../classes/BlogManage.php";
 require_once "../classes/class.Input.php";
 
-// Upload folder for blog images
 $uploadDir = "../uploads/blogs/";
 
 // Ensure folder exists
@@ -69,7 +68,7 @@ if ($sFlag == "addBlog") {
         return;
     }
 
-    // Upload image if provided
+    // Upload image
     $imagePath = uploadBlogImage($uploadDir);
 
     $blog = new BlogManage();
@@ -87,9 +86,11 @@ if ($sFlag == "addBlog") {
         $seoDesc
     );
 
-    echo json_encode($result ?
-        ["status" => "success", "message" => "Blog added successfully"] :
-        ["status" => "error", "message" => "Failed to add blog"]);
+    echo json_encode(
+        $result
+            ? ["status" => "success", "message" => "Blog added successfully"]
+            : ["status" => "error", "message" => "Failed to add blog"]
+    );
 }
 
 
@@ -99,9 +100,9 @@ if ($sFlag == "addBlog") {
 ============================================================ */
 if ($sFlag == "fetchAll") {
 
-    $title    = Input::request("title");
-    $category = Input::request("category");
-    $status   = Input::request("status");
+    $title    = Input::request("title") ?: "";
+    $category = Input::request("category") ?: "";
+    $status   = Input::request("status") ?: 0;
 
     $blog = new BlogManage();
     $data = $blog->fetchAll($title, $category, $status);
@@ -141,6 +142,7 @@ if ($sFlag == "updateBlog") {
     $id          = Input::request("id");
     $title       = Input::request("title");
     $slug        = Input::request("slug");
+    $author_name = Input::request("author_name");
     $category    = Input::request("category");
     $content     = $_REQUEST["content"];
     $status      = Input::request("status");
@@ -161,6 +163,7 @@ if ($sFlag == "updateBlog") {
     $result = $blog->updateBlog(
         $id,
         $title,
+        $author_name,
         $slug,
         $category,
         $content,
@@ -198,5 +201,56 @@ if ($sFlag == "deleteBlog") {
         ["status" => "success", "message" => "Blog deleted successfully"] :
         ["status" => "error", "message" => "Failed to delete"]);
 }
+
+
+
+/* ============================================================
+   FETCH ALL CATEGORIES (NEW)
+============================================================ */
+if ($sFlag == "categories") {
+
+    $blog = new BlogManage();
+    $data = $blog->fetchCategories();
+
+    echo json_encode(["status" => "success", "data" => $data]);
+}
+
+
+
+/* ============================================================
+   FETCH RECENT BLOGS (NEW)
+============================================================ */
+if ($sFlag == "recent") {
+
+    $limit = Input::request("limit") ?: 5; // default latest 5
+
+    $blog = new BlogManage();
+    $data = $blog->fetchRecent($limit);
+
+    echo json_encode(["status" => "success", "data" => $data]);
+}
+
+/* ============================================================
+   GET BLOG BY ID
+============================================================ */
+if ($sFlag == "getBlogById") {
+
+    $id = Input::request("id");
+
+    if ($id == "") {
+        echo json_encode(["status" => "error", "message" => "Missing ID"]);
+        return;
+    }
+
+    $blog = new BlogManage();
+    $data = $blog->fetchById($id);
+
+    if ($data) {
+        echo json_encode(["status" => "success", "data" => $data]);
+    } else {
+        echo json_encode(["status" => "error", "message" => "Not found"]);
+    }
+}
+
 
 ?>

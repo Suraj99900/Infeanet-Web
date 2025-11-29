@@ -180,3 +180,59 @@ CREATE TABLE `app_courses` (
     INDEX (`course_status`),
     INDEX (`deleted`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+CREATE TABLE `admin_courses` (
+    `id` BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    
+    `course_id` VARCHAR(50) NOT NULL,              -- Auto generated like CR-01
+    `author_name` VARCHAR(255) NOT NULL,           -- From admin session
+    
+    `course_title` VARCHAR(255) NOT NULL,
+    `course_slug` VARCHAR(255) NOT NULL,
+    `course_category` VARCHAR(255) NOT NULL,
+    
+    `course_short_desc` TEXT DEFAULT NULL,         -- 150-200 chars summary
+    `course_full_desc` LONGTEXT NOT NULL,          -- Full course content
+    
+    `course_thumbnail` VARCHAR(255) DEFAULT NULL,  -- Thumbnail Image
+    `course_banner` VARCHAR(255) DEFAULT NULL,     -- Optional Banner
+    
+    `course_link` VARCHAR(500) DEFAULT NULL,       -- URL (website, LMS, YouTube)
+    `whatsapp_link` VARCHAR(300) DEFAULT NULL,     -- WhatsApp Contact Link
+    
+    `course_price` DECIMAL(10,2) DEFAULT 0.00,
+    `course_duration` VARCHAR(100) DEFAULT NULL,   -- e.g. "2 Months", "6 Weeks"
+    `course_level` VARCHAR(100) DEFAULT NULL,      -- e.g. Beginner / Advanced
+    
+    `requirements` LONGTEXT DEFAULT NULL,          -- JSON / HTML list
+    `what_you_learn` LONGTEXT DEFAULT NULL,        -- Bullet points
+    
+    `seo_title` VARCHAR(255) DEFAULT NULL,
+    `seo_keywords` VARCHAR(500) DEFAULT NULL,
+    `seo_description` VARCHAR(600) DEFAULT NULL,
+
+    `course_status` INT DEFAULT 1,                 -- 1=Active, 0=Inactive
+    `added_on` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_on` TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+
+    `deleted` INT DEFAULT 0,                       -- soft delete
+
+    INDEX (`course_category`),
+    INDEX (`course_status`),
+    INDEX (`deleted`),
+    UNIQUE (`course_slug`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+CREATE TABLE gallery (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  image_name VARCHAR(255) NOT NULL,
+  image_tagline VARCHAR(255) DEFAULT NULL,
+  image_path VARCHAR(255) NOT NULL,
+  status TINYINT(1) DEFAULT 1,
+  added_on DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_on DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  deleted TINYINT(1) DEFAULT 0
+);

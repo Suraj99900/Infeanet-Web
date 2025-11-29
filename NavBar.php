@@ -43,55 +43,23 @@ if (session_status() == PHP_SESSION_NONE) {
                     <li><a href="index.php">Home</a>
                     </li>
                     <li><a href="about.php">About Us</a></li>
-                    <li ><a href="service.php">Services</a>
+                    <li><a href="service.php">Services</a>
                         <!-- <ul class="sub-menu">
                             <li><a href="service.php">Services</a></li>
                             <li><a href="service-details.php">Services Details</a></li>
                         </ul> -->
                     </li>
-                    <li class="menu-item-has-children"><a href="#">Students</a>
+                    <!-- <li><a href="course.php">Course</a>
+                    </li> -->
+                    <li class="menu-item-has-children"><a href="#">Pages</a>
                         <ul class="sub-menu">
-                            <li class="menu-item-has-children"><a href="#">Futurekart - (Course)</a>
-                                <ul class="sub-menu">
-                                    <li><a href="shop.php">Course detail</a></li>
-                                    <li><a href="cart.php">Cart Page</a></li>
-                                    <li><a href="checkout.php">Checkout</a></li>
-                                    <li><a href="wishlist.php">Wishlist</a></li>
-                                </ul>
+                            <li><a href="course.php">Course</a>
                             </li>
-                            <li><a href="team.php">Team</a></li>
-                            <li><a href="project.php">Project</a></li>
-                            <li><a href="project-details.php">Type Of Project</a></li>
                             <li><a href="gallery.php">Gallery</a></li>
                             <li><a href="faq.php">Faq Page</a></li>
                         </ul>
                     </li>
-                    <!-- <li class="menu-item-has-children"><a href="#">Pages</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item-has-children"><a href="#">Shop</a>
-                                <ul class="sub-menu">
-                                    <li><a href="shop.php">Shop</a></li>
-                                    <li><a href="shop-details.php">Shop Details</a></li>
-                                    <li><a href="cart.php">Cart Page</a></li>
-                                    <li><a href="checkout.php">Checkout</a></li>
-                                    <li><a href="wishlist.php">Wishlist</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="team.php">Team</a></li>
-                            <li><a href="team-details.php">Team Details</a></li>
-                            <li><a href="project.php">Project</a></li>
-                            <li><a href="project-details.php">Project Details</a></li>
-                            <li><a href="gallery.php">Gallery</a></li>
-                            <li><a href="pricing.php">Pricing</a></li>
-                            <li><a href="faq.php">Faq Page</a></li>
-                            <li><a href="error.php">Error Page</a></li>
-                        </ul>
-                    </li> -->
-                    <li class="menu-item-has-children"><a href="#">Blog</a>
-                        <ul class="sub-menu">
-                            <li><a href="blog.php">Blog</a></li>
-                            <li><a href="blog-details.php">Blog Details</a></li>
-                        </ul>
+                    <li><a href="blog.php">Blog</a>
                     </li>
                     <li><a href="contact.php">Contact</a></li>
                     <?php
@@ -149,26 +117,14 @@ if (session_status() == PHP_SESSION_NONE) {
                                     </li>
                                     <li class="menu-item-has-children"><a href="#">Students</a>
                                         <ul class="sub-menu">
-                                            <li class="menu-item-has-children"><a href="#">Futurekart - (Course)</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="shop.php">Course detail</a></li>
-                                                    <li><a href="cart.php">Cart Page</a></li>
-                                                    <li><a href="checkout.php">Checkout</a></li>
-                                                    <li><a href="wishlist.php">Wishlist</a></li>
-                                                </ul>
+                                            <li><a href="course.php">Course</a>
                                             </li>
-                                            <li><a href="team.php">Team</a></li>
-                                            <li><a href="project.php">Project</a></li>
-                                            <li><a href="project-details.php">Type Of Project</a></li>
                                             <li><a href="gallery.php">Gallery</a></li>
                                             <li><a href="faq.php">Faq Page</a></li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item-has-children"><a href="#">Blog</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog.php">Blog</a></li>
-                                            <li><a href="blog-details.php">Blog Details</a></li>
-                                        </ul>
+                                    <li><a href="blog.php">Blog</a>
+
                                     </li>
                                     <li><a href="career.php">career</a></li>
                                     <li><a href="contact.php">Contact</a></li>

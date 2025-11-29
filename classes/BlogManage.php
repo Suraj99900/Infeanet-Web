@@ -1,6 +1,6 @@
 <?php
 require_once "../config.php";
-require_once ABS_PATH_TO_PROJECT."classes/DB-Connection.php";
+require_once ABS_PATH_TO_PROJECT . "classes/DB-Connection.php";
 
 class BlogManage
 {
@@ -55,7 +55,6 @@ class BlogManage
             }
 
             return false;
-
         } catch (\Exception $e) {
             die("Error fetching blog: " . $e->getMessage());
         }
@@ -102,7 +101,6 @@ class BlogManage
         try {
             $oQB->executeQuery();
             return $oConnection->conn->lastInsertId();
-
         } catch (\Exception $e) {
             die("Error adding blog: " . $e->getMessage());
         }
@@ -124,7 +122,6 @@ class BlogManage
             $next = ($row['max_id'] ?? 0) + 1;
 
             return "BL-" . str_pad($next, 3, "0", STR_PAD_LEFT);
-
         } catch (\Exception $e) {
             die("Error generating blog ID: " . $e->getMessage());
         }
@@ -133,7 +130,7 @@ class BlogManage
     /* ============================================================
        Update Blog
     ============================================================ */
-    function updateBlog($id, $title, $slug, $category, $content, $status, $image = null, $whatsapp = null, $seoTitle = null, $seoKeywords = null, $seoDesc = null)
+    function updateBlog($id, $title, $sAuthorName, $slug, $category, $content, $status, $image = null, $whatsapp = null, $seoTitle = null, $seoKeywords = null, $seoDesc = null)
     {
         $oConnection = new DBConnection();
         $oQB = $oConnection->conn->createQueryBuilder();
@@ -141,6 +138,7 @@ class BlogManage
 
         $oQB->update($table)
             ->set("blog_title", ":title")
+            ->set("author_name", ":author")
             ->set("blog_slug", ":slug")
             ->set("blog_category", ":category")
             ->set("blog_content", ":content")
@@ -158,6 +156,7 @@ class BlogManage
         $oQB->where("id = :id")
             ->andWhere("deleted = 0")
             ->setParameter("title", $title)
+            ->setParameter("author", $sAuthorName)
             ->setParameter("slug", $slug)
             ->setParameter("category", $category)
             ->setParameter("content", $content)
@@ -171,7 +170,6 @@ class BlogManage
         try {
             $oQB->executeQuery();
             return true;
-
         } catch (\Exception $e) {
             die("Error updating blog: " . $e->getMessage());
         }
@@ -195,7 +193,6 @@ class BlogManage
         try {
             $oQB->executeQuery();
             return true;
-
         } catch (\Exception $e) {
             die("Error deleting blog: " . $e->getMessage());
         }
@@ -204,7 +201,7 @@ class BlogManage
     /* ============================================================
        Fetch All Blogs With Filters
     ============================================================ */
-    function fetchAll($title = "", $category = "", $status = "")
+    function fetchAll($title = "", $category = "", $status = 1)
     {
         $oConnection = new DBConnection();
         $oQB = $oConnection->conn->createQueryBuilder();
@@ -215,7 +212,7 @@ class BlogManage
 
         if (!empty($title)) {
             $oQB->andWhere("blog_title LIKE :title")
-                ->setParameter("title", "%".$title."%");
+                ->setParameter("title", "%" . $title . "%");
         }
 
         if (!empty($category)) {
@@ -223,16 +220,62 @@ class BlogManage
                 ->setParameter("category", $category);
         }
 
-        if ($status !== "") {
+        if ($status != "") {
             $oQB->andWhere("blog_status = :status")
                 ->setParameter("status", $status);
         }
 
         try {
             return $oQB->executeQuery()->fetchAllAssociative();
-
         } catch (\Exception $e) {
             die("Error fetching blogs: " . $e->getMessage());
+        }
+    }
+
+
+    /* ============================================================
+   Fetch Recent Blogs
+============================================================ */
+    function fetchRecent($limit = 5)
+    {
+        $oConnection = new DBConnection();
+        $oQB = $oConnection->conn->createQueryBuilder();
+
+        $oQB->select("id, blog_title, blog_slug, blog_image, blog_category, added_on")
+            ->from("app_blogs")
+            ->where("deleted = 0")
+            ->andWhere("blog_status = 1")
+            ->orderBy("id", "DESC")
+            ->setMaxResults($limit);
+
+        try {
+            return $oQB->executeQuery()->fetchAllAssociative();
+        } catch (\Exception $e) {
+            die("Error fetching recent blogs: " . $e->getMessage());
+        }
+    }
+
+
+    /* ============================================================
+   Fetch All Blog Categories (Distinct)
+============================================================ */
+    function fetchCategories()
+    {
+        $oConnection = new DBConnection();
+        $oQB = $oConnection->conn->createQueryBuilder();
+
+        $oQB->select("DISTINCT blog_category,count(blog_category) as total")
+            ->from("app_blogs")
+            ->where("deleted = 0")
+            ->andWhere("blog_category IS NOT NULL")
+            ->andWhere("blog_category != ''")
+            ->groupBy("blog_category")
+            ->orderBy("blog_category", "ASC");
+
+        try {
+            return $oQB->executeQuery()->fetchAllAssociative();
+        } catch (\Exception $e) {
+            die("Error fetching categories: " . $e->getMessage());
         }
     }
 }

@@ -84,8 +84,11 @@ if ($sFlag == 'addService') {
    ============================================================ */
 if ($sFlag == 'fetchAll') {
 
+    $category = Input::request('category') ?: "";
+    $title = Input::request('title') ?: "";
+
     $service = new ServiceManage();
-    $data    = $service->fetchAll();
+    $data    = $service->fetchAll($title,$category);
 
     echo json_encode(["status" => "success", "data" => $data]);
 }

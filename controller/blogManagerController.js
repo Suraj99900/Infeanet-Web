@@ -1,11 +1,11 @@
 $(document).ready(function () {
 
-    // INITIAL FETCH
+
     fetchAllBlogs();
 
-    // ===========================================
+    // -------------------------------
     // FETCH ALL BLOGS
-    // ===========================================
+    // -------------------------------
     function fetchAllBlogs() {
 
         $.ajax({
@@ -15,71 +15,64 @@ $(document).ready(function () {
                 sFlag: "fetchAll",
                 title: $("#filterBlogTitle").val(),
                 category: $("#filterBlogCategory").val(),
-                status: $("#filterBlogStatus").val()
+                status: 1
             },
             dataType: "json",
-
             success: function (res) {
                 if (res.status === "success") {
                     renderBlogTable(res.data);
                 } else {
-                    responsePop("Error", res.message, "error", "OK");
+                    responsePop("Error", res.message, "error", "ok");
                 }
             }
         });
     }
 
-
-    // ===========================================
+    // -------------------------------
     // RENDER BLOG TABLE
-    // ===========================================
+    // -------------------------------
     function renderBlogTable(blogs) {
-
         let tbody = $("#blogBodyId");
         tbody.empty();
-
-        if (!blogs || blogs.length === 0) {
-            tbody.append(`
-                <tr>
-                    <td colspan="6" class="text-center">No Blogs Found</td>
-                </tr>
-            `);
+        console.log(blogs);
+        if (blogs.length === 0) {
+            tbody.html(`<tr><td colspan="7" class="text-center">No blogs found.</td></tr>`);
             return;
         }
 
         blogs.forEach((blog, index) => {
+            let count = index + 1;
 
-            let statusBadge = blog.status == "1"
-                ? `<span class="badge bg-success">Active</span>`
-                : `<span class="badge bg-danger">Inactive</span>`;
-
-            let tr = `
+            let row = `
                 <tr>
-                    <td>${index + 1}</td>
-                    <td>${blog.id}</td>
-                    <td>${blog.title}</td>
-                    <td>${blog.category}</td>
-                    <td>${statusBadge}</td>
-
+                    <td>${count}</td>
+                    <td>${blog.blog_title}</td>
+                    <td>${blog.blog_category}</td>
+                    <td>${blog.author_name}</td>
+                    <td><img src="${blog.blog_image}" width="60"></td>
+                    <td>${truncateText(stripHtml(blog.blog_content), 80)}</td>
                     <td>
-
-                        <a href="editBlogPage.php?id=${blog.id}" 
-                           class="btn btn-sm btn-primary me-1">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </a>
-
-                        <button class="btn btn-sm btn-danger deleteBlogBtn"
-                                data-id="${blog.id}">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-
+                        <a href="edit-blog.php?id=${blog.id}" class="btn btn-sm btn-primary">Edit</a>
+                        <button class="btn btn-sm btn-danger deleteBlog" data-id="${blog.id}">Delete</button>
                     </td>
                 </tr>
             `;
 
-            tbody.append(tr);
+            tbody.append(row);
         });
     }
+
+    // Remove HTML tags
+    function stripHtml(html) {
+        return $("<div>").html(html).text();
+    }
+
+    // Limit text
+    function truncateText(text, maxLength) {
+        return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
+    }
+
+
 
 
     // ===========================================
@@ -141,5 +134,48 @@ $(document).ready(function () {
         fetchAllBlogs();
     });
 
+
+    $('#idAddBlogSubmit').on('click', function () {
+
+        let form = $('#addBlogForm')[0];
+        let formData = new FormData(form);
+
+        // APPEND ALL REQUIRED FIELDS
+        formData.append('sFlag', 'addBlog');
+        formData.append('author_name', $('#BlogAuthorId').val());
+        formData.append('title', $('#BlogTitleId').val());
+        formData.append('slug', $('#BlogSlugId').val());
+        formData.append('category', $('#BlogCategoryId').val());
+        formData.append('content', tinymce.get("BlogContentEditor").getContent());
+        formData.append('whatsapp', $('#BlogWhatsappId').val());
+        formData.append('seo_title', $('#SEO_TitleId').val());
+        formData.append('seo_keywords', $('#SEO_KeywordsId').val());
+        formData.append('seo_description', $('#SEO_DescId').val());
+        formData.append('status', $('#BlogStatusId').val());
+
+        // IMAGE
+        let imageFile = $('#BlogImageId')[0].files[0];
+        if (imageFile) {
+            formData.append("blog_image", imageFile);
+        }
+
+        $.ajax({
+            url: "ajaxFile/blogAjax.php",
+            method: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            dataType: "json",
+
+            success: function (res) {
+                if (res.status === "success") {
+                    responsePop("Success", res.message, "success", "OK")
+                    window.location.href = 'adminBlogManagement.php';
+                } else {
+                    responsePop("Error", res.message, "error", "OK");
+                }
+            }
+        });
+    });
 
 }); // end document ready
