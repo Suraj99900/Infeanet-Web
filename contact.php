@@ -23,7 +23,7 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
                 <div class="contact-info">
                     <div class="contact-info_icon"><i class="fas fa-location-dot"></i></div>
                     <div class="media-body">
-                        <h4 class="box-title">Our Office Address</h4><span class="contact-info_text">Burnsville, MN 55337 Streat,<br>United States</span>
+                        <h4 class="box-title">Our Office Address</h4><span class="contact-info_text">Dhayari Gao, SHOP NO 4, Garmal, Dhayari Phata<br>Pune, Maharashtra 411041, India</span>
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
                 <div class="contact-info">
                     <div class="contact-info_icon"><i class="fas fa-phone"></i></div>
                     <div class="media-body">
-                        <h4 class="box-title">Call Us Anytime</h4><span class="contact-info_text"><a href="tel:+65485965789">(+65) - 48596 - 5789</a> <a href="tel:+65485965789">+65-48596-5789</a></span>
+                        <h4 class="box-title">Call Us Anytime</h4><span class="contact-info_text"><a href="tel:+91 9284187968">+91 9284187968</a>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
                 <div class="contact-info">
                     <div class="contact-info_icon"><i class="fas fa-envelope"></i></div>
                     <div class="media-body">
-                        <h4 class="box-title">Send An Email</h4><span class="contact-info_text"><a href="mailto:info.example@gmail.com">info.example@gmail.com</a> <a href="mailto:info@webteck.com">info@webteck.com</a></span>
+                        <h4 class="box-title">Send An Email</h4><span class="contact-info_text"><a href="mailto:rutujas@infeanet.com">rutujas@infeanet.com</a></span>
                     </div>
                 </div>
             </div>
@@ -77,7 +77,18 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
         </div>
     </div>
 </div>
-<div class="map-sec"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.7310056272386!2d89.2286059153658!3d24.00527418490799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fe9b97badc6151%3A0x30b048c9fb2129bc!2sThemeholy!5e0!3m2!1sen!2sbd!4v1651028958211!5m2!1sen!2sbd" allowfullscreen="" loading="lazy"></iframe></div>
+<div class="map-sec">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.63921533153!2d73.80820437519593!3d18.58898188251279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf9b628d9c65%3A0xfadf07fb0c91e6f8!2sDhayari%20Phata%2C%20Pune%2C%20Maharashtra%20411041%2C%20India!5e0!3m2!1sen!2sin!4v1732974000000!5m2!1sen!2sin" 
+        width="100%" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
     
 <?php
 include_once ABS_PATH_TO_PROJECT . "CDN_Footer.php";

@@ -29,7 +29,7 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
     .gallery-img img {
         width: 100%;
         height: 260px;
-        object-fit: cover;
+        object-fit: contain ;
         border-radius: 12px;
         transition: all 0.4s ease;
     }

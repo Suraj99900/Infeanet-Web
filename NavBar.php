@@ -37,7 +37,7 @@ if (session_status() == PHP_SESSION_NONE) {
     </div>
     <div class="th-menu-wrapper">
         <div class="th-menu-area text-center"><button class="th-menu-toggle"><i class="fal fa-times"></i></button>
-            <div class="mobile-logo" style="width: 50%;margin: auto;height: auto; background-color: white;"><a class="icon-masking" href="index.php"><span data-mask-src="assets/img/icon/logo.svg" class="mask-icon"></span><img src="assets/img/icon/logo.svg" alt="Webteck"></a></div>
+            <div class="mobile-logo" style="width: 60%;margin: auto;height: auto; background-color: white;"><a class="icon-masking" href="index.php"><span data-mask-src="assets/img/icon/logo.svg" class="mask-icon"></span><img src="assets/img/icon/logo.svg" alt="Webteck"></a></div>
             <div class="th-mobile-menu">
                 <ul>
                     <li><a href="index.php">Home</a>
@@ -83,9 +83,9 @@ if (session_status() == PHP_SESSION_NONE) {
                     <div class="col-auto d-none d-lg-block">
                         <div class="header-links">
                             <ul>
-                                <li><i class="fas fa-map-location"></i>Narhe Road, Pune, Maharashtra 411041, IN</li>
-                                <li><i class="fas fa-phone"></i><a href="tel:+91 9823209060">+91 9823209060</a></li>
-                                <li><i class="fas fa-envelope"></i><a href="mailto:info@infeanet.com">info@infeanet.com</a></li>
+                                <li><i class="fas fa-map-location"></i>Dhayari Gao, SHOP NO 4, Garmal, Dhayari Phata, Pune, Maharashtra 411041, India</li>
+                                <li><i class="fas fa-phone"></i><a href="tel:+91 9284187968">+91 9284187968</a></li>
+                                <li><i class="fas fa-envelope"></i><a href="mailto:rutujas@infeanet.com">rutujas@infeanet.com</a></li>
                             </ul>
                         </div>
                     </div>
@@ -100,7 +100,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 <div class="container">
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto">
-                            <div class="header-logo" style="width: 15vw;"><a class="icon-masking" href="index.php"><span data-mask-src="assets/img/icon/logo.svg" class="mask-icon"></span><img src="assets/img/icon/logo.svg" alt="Webteck"></a></div>
+                            <div class="header-logo" style="width: 170px;"><a class="icon-masking" href="index.php"><span data-mask-src="assets/img/icon/logo.svg" class="mask-icon"></span><img src="assets/img/icon/logo.svg" alt="Webteck"></a></div>
                         </div>
                         <div class="col-auto">
                             <nav class="main-menu d-none d-lg-inline-block">
@@ -126,7 +126,7 @@ if (session_status() == PHP_SESSION_NONE) {
                                     <li><a href="blog.php">Blog</a>
 
                                     </li>
-                                    <li><a href="career.php">career</a></li>
+                                    <!-- <li><a href="career.php">career</a></li> -->
                                     <li><a href="contact.php">Contact</a></li>
 
                                 </ul>

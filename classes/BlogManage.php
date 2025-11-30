@@ -201,7 +201,7 @@ class BlogManage
     /* ============================================================
        Fetch All Blogs With Filters
     ============================================================ */
-    function fetchAll($title = "", $category = "", $status = 1)
+    function fetchAll($title = "", $category = "", $status = 1,$sOrder = "desc",$iLimit = "")
     {
         $oConnection = new DBConnection();
         $oQB = $oConnection->conn->createQueryBuilder();
@@ -223,6 +223,13 @@ class BlogManage
         if ($status != "") {
             $oQB->andWhere("blog_status = :status")
                 ->setParameter("status", $status);
+        }
+        if ($sOrder != "") {
+            $oQB->orderBy("id", $sOrder);
+        }
+
+        if($iLimit != ""){
+            $oQB->setMaxResults($iLimit);
         }
 
         try {

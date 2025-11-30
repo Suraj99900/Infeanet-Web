@@ -81,24 +81,21 @@ include_once "leftBar.php";
                             <div class="col12">
                                 <div class="p-2" style="overflow-x: auto;">
 
-                                    <table id="courseDetailsTable" class="table table-striped table-hover table-bordered display">
+                                    <table id="coursesTable" class="table table-striped table-hover table-bordered display" style="width:100%;">
                                         <thead class="table-dark">
                                             <tr>
-                                                <th>Sr. No</th>
-                                                <th>Course Title</th>
+                                                <th>#</th>
+                                                <th>Title</th>
                                                 <th>Category</th>
-                                                <th>Instructor</th>
+                                                <th>Author</th>
                                                 <th>Thumbnail</th>
-                                                <th>Course Link</th>
-                                                <th>Description</th>
-                                                <th>Actions</th>
+                                                <th>Link</th>
+                                                <th style="width: 40%;">Description</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
-
                                         <tbody id="courseBodyId"></tbody>
-
                                     </table>
-
                                 </div>
                             </div>
                         </div>

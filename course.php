@@ -10,7 +10,7 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
         <div class="breadcumb-content">
             <h1 class="breadcumb-title">Courses</h1>
             <ul class="breadcumb-menu" aria-label="Breadcrumb">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li aria-current="page">Courses</li>
             </ul>
         </div>

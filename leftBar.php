@@ -39,7 +39,8 @@ function nav_active($key, $iActive) {
 
         <!-- ADMIN-ONLY ITEMS -->
         <?php if ($oSessionManager->iUserType == 1) { ?>
-
+            <!-- HEADING -->
+            <li class="nav-heading">Admin Management</li>
             <!-- UPLOAD NOTES -->
             <li class="nav-item">
                 <a class="<?= nav_active('upload-notes', $iActive) ?>" href="notesUpload.php" title="Upload notes">

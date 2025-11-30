@@ -142,35 +142,7 @@ $(document).ready(function () {
         });
     });
 
-    /* ============================================================
-       DELETE COURSE
-    ============================================================ */
-    $(document).on("click", ".deleteCourseBtn", function () {
-        if (!confirm("Are you sure to delete this course?")) return;
 
-        let id = $(this).data("id");
-
-        $.ajax({
-            url: ajaxUrl,
-            type: "POST",
-            data: {
-                sFlag: "deleteCourse",
-                id: id
-            },
-            dataType: "json",
-            success: function (res) {
-                if (res.status === "success") {
-                    alert(res.message);
-                    fetchAllCourses();
-                } else {
-                    alert(res.message);
-                }
-            },
-            error: function () {
-                alert("Error deleting course");
-            }
-        });
-    });
 
     /* ============================================================
        FETCH CATEGORIES
@@ -233,35 +205,71 @@ $(document).ready(function () {
         });
     }
 
+    let coursesTable;
+
+
+    coursesTable = $("#coursesTable").DataTable({
+        destroy: true,
+        responsive: true,
+        autoWidth: false,
+        columnDefs: [
+            { orderable: false, targets: [4, 7] } // disable sorting on thumbnail & action
+        ]
+    });
+
+
+
     /* ============================================================
        RENDER COURSES TABLE
     ============================================================ */
     function renderCoursesTable(data) {
-        let html = "";
-        if (data.length === 0) {
-            html = '<tr><td colspan="8" class="text-center">No courses found</td></tr>';
-        } else {
-            data.forEach((course, index) => {
-                html += `
-                    <tr>
-                        <td>${index + 1}</td>
-                        <td>${course.course_title}</td>
-                        <td>${course.course_category}</td>
-                        <td>${course.author_name}</td>
-                        <td><img src="${course.course_thumbnail}" class="course-thumb" /></td>
-                        <td><a href="${course.course_link}" target="_blank">Link</a></td>
-                        <td>${course.course_short_desc || ""}</td>
-                        <td>
-                            <a class="btn btn-sm btn-primary editCourseBtns" href="editCourse.php?id=${course.id}" data-id="${course.id}">Edit</a>
-                            <button class="btn btn-sm btn-danger deleteCourseBtn" data-id="${course.id}">Delete</button>
-                        </td>
-                    </tr>
-                `;
-            });
-        }
-        $("#courseBodyId").html(html);
-    }
+        const table = $("#coursesTable").DataTable();
+        table.clear(); // Clear old rows
 
+        if (!Array.isArray(data) || data.length === 0) {
+            table.row.add([
+                "",
+                '<span class="text-muted small">No courses found</span>',
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]).draw();
+            return;
+        }
+
+        data.forEach((course, index) => {
+            const thumbnail = `<img src="${course.course_thumbnail}" class="course-thumb" style="width:80px;height:50px;object-fit:cover;border-radius:4px;">`;
+
+            let shortDesc = course.course_short_desc ?
+                course.course_short_desc.replace(/<[^>]+>/g, '').substring(0, 160) + "..." :
+                "";
+
+            const actions = `
+            <a class="btn btn-outline-primary btn-sm editCourseBtns" href="editCourse.php?id=${course.id}" title="Edit">
+                <i class="fa fa-pen"></i>
+            </a>
+            <a class="btn btn-outline-danger btn-sm deleteCourseBtn" data-id="${course.id}" title="Delete">
+                <i class="fa fa-trash"></i>
+            </a>
+        `;
+
+            table.row.add([
+                index + 1,
+                course.course_title || "",
+                course.course_category || "",
+                course.author_name || "",
+                thumbnail,
+                `<a href="${course.course_link}" target="_blank"><i class="fa fa-external-link-alt"></i></a>`,
+                shortDesc || "",
+                actions
+            ]);
+        });
+
+        table.draw(); // Refresh the DataTable
+    }
     // Initial fetch
     fetchAllCourses();
 

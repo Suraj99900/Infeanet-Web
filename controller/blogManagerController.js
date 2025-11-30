@@ -31,35 +31,59 @@ $(document).ready(function () {
     // -------------------------------
     // RENDER BLOG TABLE
     // -------------------------------
+    let blogTable;
+    blogTable = $("#blogTable").DataTable({
+        destroy: true,
+        responsive: true,
+        autoWidth: false,
+        columnDefs: [
+            { orderable: false, targets: [4, 6] } // disable sort on image & action
+        ]
+    });
+
     function renderBlogTable(blogs) {
-        let tbody = $("#blogBodyId");
-        tbody.empty();
-        console.log(blogs);
-        if (blogs.length === 0) {
-            tbody.html(`<tr><td colspan="7" class="text-center">No blogs found.</td></tr>`);
+        const table = $("#blogTable").DataTable();
+        table.clear(); // clear existing rows
+
+        if (!Array.isArray(blogs) || blogs.length === 0) {
+            table.row.add([
+                "",
+                `<span class="text-muted small">No blogs found.</span>`,
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]);
+            table.draw();
             return;
         }
 
         blogs.forEach((blog, index) => {
-            let count = index + 1;
+            const imgHtml = `<img src="${blog.blog_image}" width="70" style="border-radius:4px;object-fit:cover;">`;
+            const shortContent = truncateText(stripHtml(blog.blog_content), 80);
 
-            let row = `
-                <tr>
-                    <td>${count}</td>
-                    <td>${blog.blog_title}</td>
-                    <td>${blog.blog_category}</td>
-                    <td>${blog.author_name}</td>
-                    <td><img src="${blog.blog_image}" width="60"></td>
-                    <td>${truncateText(stripHtml(blog.blog_content), 80)}</td>
-                    <td>
-                        <a href="edit-blog.php?id=${blog.id}" class="btn btn-sm btn-primary">Edit</a>
-                        <button class="btn btn-sm btn-danger deleteBlog" data-id="${blog.id}">Delete</button>
-                    </td>
-                </tr>
-            `;
+            const actions = `
+            <a class="btn btn-outline-primary btn-sm editBlogBtn" href="edit-blog.php?id=${blog.id}" data-id="${blog.id}" title="Edit">
+                <i class="fa fa-pen"></i>
+            </a>
+            <a class="btn btn-outline-danger btn-sm deleteBlogBtn" data-id="${blog.id}" title="Delete">
+                <i class="fa fa-trash"></i>
+            </a>
+        `;
 
-            tbody.append(row);
+            table.row.add([
+                index + 1,
+                blog.blog_title || "",
+                blog.blog_category || "",
+                blog.author_name || "",
+                imgHtml,
+                shortContent,
+                actions
+            ]);
         });
+
+        table.draw();
     }
 
     // Remove HTML tags

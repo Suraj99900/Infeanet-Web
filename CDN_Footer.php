@@ -1,9 +1,9 @@
 <footer class="footer-wrapper footer-layout3" data-bg-src="assets/img/bg/footer_bg_2.jpg">
-    <div class="footer-top">
+    <!-- <div class="footer-top">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-3">
-                    <div class="footer-logo" style="width: 80%;">
+                    <div class="footer-logo" style="width: 220px;">
                         <a class="icon-masking" href="index.php">
                             <span data-mask-src="assets/img/icon/logo.svg" class="mask-icon">
                             </span>
@@ -24,13 +24,19 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="widget-area">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-md-6 col-xxl-3 col-xl-4">
                     <div class="widget footer-widget">
-                        <h3 class="widget_title">About Company</h3>
+                        <div class="footer-logo" style="width: 220px;margin-bottom: 10px;">
+                            <a class="icon-masking" href="index.php">
+                                <span data-mask-src="assets/img/icon/logo.svg" class="mask-icon">
+                                </span>
+                                <img src="assets/img/icon/logo.svg" alt="Webteck">
+                            </a>
+                        </div>
                         <div class="th-widget-about">
                             <p class="about-text">Professionally redefine transparent ROI through low-risk high-yield imperatives. Progressively create empowered. cost effective users via team driven.</p>
                             <div class="th-social"><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a> <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a> <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a> <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a> <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a></div>
@@ -43,8 +49,8 @@
                         <div class="menu-all-pages-container">
                             <ul class="menu">
                                 <li><a href="about.php">About Us</a></li>
-                                <li><a href="team.php">Meet Our Team</a></li>
-                                <li><a href="project.php">Our Projects</a></li>
+                                <li><a href="service.php">Service</a></li>
+                                <li><a href="blog.php">Blog</a></li>
                                 <li><a href="faq.php">Help & FAQs</a></li>
                                 <li><a href="contact.php">Contact Us</a></li>
                             </ul>
@@ -55,7 +61,7 @@
                     <div class="widget widget_nav_menu footer-widget">
                         <h3 class="widget_title">IT SERVICES</h3>
                         <div class="menu-all-pages-container">
-                            <ul class="menu">
+                            <ul class="menu" id="serviceLinkId">
                                 <li><a href="service-details.php">Web Development</a></li>
                                 <li><a href="service-details.php">Business Development</a></li>
                                 <li><a href="service-details.php">Product Management</a></li>
@@ -68,7 +74,7 @@
                 <div class="col-md-6 col-xl-auto">
                     <div class="widget footer-widget">
                         <h3 class="widget_title">Recent Posts</h3>
-                        <div class="recent-post-wrap">
+                        <div class="recent-post-wrap" id="blogFooterId">
                             <div class="recent-post">
                                 <div class="media-img"><a href="blog-details.php"><img src="assets/img/blog/recent-post-2-1.jpg" alt="Blog Image"></a></div>
                                 <div class="media-body">
@@ -93,7 +99,7 @@
         <div class="container">
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-6">
-                    <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2025 <a href="https://themeforest.net/user/themeholy">Themeholy</a>. All Rights Reserved.</p>
+                    <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2025 <a href="<?php echo API_URL; ?>/index.php"><?php echo ORG_NAME; ?></a>. All Rights Reserved.</p>
                 </div>
                 <div class="col-lg-6 text-lg-end text-center">
                     <div class="footer-links">
@@ -130,6 +136,84 @@
 <script src="assets/js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="vendor/tinymce/tinymce/tinymce.min.js"></script>
+
+<script>
+    function getLatestFooter() {
+        $.ajax({
+            url: "ajaxFile/blogAjax.php",
+            method: "GET",
+            data: {
+                sFlag: "fetchAll",
+                order: "DESC",
+                limit: 2,
+                status: 1,
+            },
+            dataType: "json",
+            success: function(res) {
+                if (res.status === "success") {
+
+                    let sFooterBlogLink = "";
+
+                    $.each(res.data, function(i, r) {
+                        let shortDesc = r['blog_content'] ?
+                            r['blog_content'].replace(/<[^>]+>/g, '').substring(0, 160) + "..." :
+                            "";
+
+                        sFooterBlogLink += `<div class="recent-post">
+                                                    <div class="media-img">
+                                                        <a href="blog-details.php?id=${r['id']}">
+                                                            <img src="${r['blog_image']}" alt="Blog Image">
+                                                        </a>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <h4 class="post-title">
+                                                            <a class="text-inherit" href="blog-details.php?id=${r['id']}">
+                                                                ${r['blog_title']}
+                                                            </a>
+                                                        </h4>
+                                                        <div class="recent-post-meta">
+                                                            <a href="blog.php"><i class="fal fa-calendar-days"></i>${r['added_on']}</a>
+                                                        </div>
+                                                    </div>
+                                                </div>`
+                    });
+
+                    $("#blogFooterId").html(sFooterBlogLink);
+                }
+            }
+        });
+
+
+        $.ajax({
+            url: "ajaxFile/serviceAjax.php",
+            method: "GET",
+            data: {
+                sFlag: "fetchAll",
+                order: "DESC",
+                limit: 5,
+                status: 1,
+            },
+            dataType: "json",
+
+            success: function(res) {
+                if (res.status === "success") {
+
+                    let html = "";
+                    res.data.forEach(s => {
+                        let sTitle = s['service_title'] ?
+                            s['service_title'].replace(/<[^>]+>/g, '').substring(0, 30):
+                            "";
+                        html += `<li><a href="service-details.php?id=${s['id']}">${sTitle}</a></li>`;
+                    });
+
+                    $("#serviceLinkId").html(html);
+                }
+            }
+        });
+    }
+    getLatestFooter();
+</script>
+
 </body>
 
 </html>

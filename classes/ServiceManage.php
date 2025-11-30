@@ -180,7 +180,7 @@ class ServiceManage
     /* ============================================================
        Fetch All Services
     ============================================================ */
-    function fetchAll($title = "", $category = "", $status = "")
+    function fetchAll($title = "", $category = "", $status = "",$sOrder = "desc",$iLimit = "")
     {
         $oConnection = new DBConnection();
         $oQB = $oConnection->conn->createQueryBuilder();
@@ -203,6 +203,14 @@ class ServiceManage
         if ($status !== "") {
             $oQB->andWhere("service_status = :status")
                 ->setParameter("status", $status);
+        }
+
+        if ($sOrder != "") {
+            $oQB->orderBy("id", $sOrder);
+        }
+
+        if($iLimit != ""){
+            $oQB->setMaxResults($iLimit);
         }
 
         try {

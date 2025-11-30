@@ -103,9 +103,11 @@ if ($sFlag == "fetchAll") {
     $title    = Input::request("title") ?: "";
     $category = Input::request("category") ?: "";
     $status   = Input::request("status") ?: 0;
+    $sOrder   = Input::request("order")?:"DESC";
+    $iLimit   = Input::request("limit")?:"";
 
     $blog = new BlogManage();
-    $data = $blog->fetchAll($title, $category, $status);
+    $data = $blog->fetchAll($title, $category, $status,$sOrder,$iLimit);
 
     echo json_encode(["status" => "success", "data" => $data]);
 }

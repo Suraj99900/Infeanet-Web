@@ -33,22 +33,24 @@ include_once "leftBar.php";
                     <i class="fa-solid fa-file-circle-plus"></i> Upload Notes
                 </button>
             </div>
+            <div class="p-2" style="overflow-x: scroll;">
+                <table id="notesTable" class="table table-bordered table-striped nowrap" style="width: 100%;">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Subject</th>
+                            <th>ISBN</th>
+                            <th>Semester</th>
+                            <th>Description</th>
+                            <th>File</th>
+                            <th>Added On</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="notesBody"></tbody>
+                </table>
+            </div>
 
-            <table id="notesTable" class="table table-bordered table-striped">
-                <thead class="table-dark">
-                    <tr>
-                        <th>ID</th>
-                        <th>Subject</th>
-                        <th>ISBN</th>
-                        <th>Semester</th>
-                        <th>Description</th>
-                        <th>File</th>
-                        <th>Added On</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="notesBody"></tbody>
-            </table>
 
         </div>
     </section>

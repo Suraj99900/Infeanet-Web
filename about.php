@@ -168,6 +168,74 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
     .swiper-slide {
         padding: 10px;
     }
+
+    .student-card {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        height: 320px;
+        background: #222;
+        transition: 0.3s;
+    }
+
+    .student-card img.student-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .student-info {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 15px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .student-info .avatar {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        object-fit: cover;
+    }
+
+    .placed-badge {
+        background: #28a745;
+        font-size: 10px;
+        padding: 3px 6px;
+        border-radius: 4px;
+    }
+
+    /* Responsive Height Adjustments */
+    @media (max-width: 768px) {
+        .student-card {
+            height: 260px;
+        }
+
+        .student-info .avatar {
+            width: 38px;
+            height: 38px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .student-card {
+            height: 230px;
+        }
+
+        .student-info {
+            padding: 10px;
+        }
+
+        .student-info .avatar {
+            width: 32px;
+            height: 32px;
+        }
+    }
 </style>
 
 <div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcumb-bg.jpg">
@@ -230,7 +298,7 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
                         <div class="call-btn">
                             <div class="play-btn"><i class="fas fa-phone"></i></div>
                             <div class="media-body"><span class="btn-text">Call Us On:</span> <a
-                                    href="tel:+19088000393" class="btn-title">+190-8800-0393</a></div>
+                                    href="tel:+91 9284187968" class="btn-title">+91 9284187968</a></div>
                         </div>
                     </div>
                 </div>
@@ -258,12 +326,12 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
             <!-- ACTION BUTTONS -->
             <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
 
-                <a href="mailto:founder@infeanet.com"
+                <a href="mailto:rutujas@infeanet.com"
                     class="btn email-btn">
-                    <i class="bi bi-envelope-fill me-2"></i> founder@infeanet.com
+                    <i class="bi bi-envelope-fill me-2"></i> rutujas@infeanet.com
                 </a>
 
-                <a href="contactUs.php"
+                <a href="contact.php"
                     class="btn connect-btn">
                     <i class="bi bi-people-fill me-2"></i> Connect With Us
                 </a>

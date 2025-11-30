@@ -4097,8 +4097,8 @@ hr.title-line {
     position: absolute;
     height: 100%;
     width: 100%;
-    mix-blend-mode: hue;
-    background: var(--theme-color);
+    /* mix-blend-mode: hue;
+    background: var(--theme-color); */
     top: 0
 }
 
@@ -4114,7 +4114,7 @@ hr.title-line {
     height: 100%;
     width: 100%;
     mix-blend-mode: color;
-    background: var(--theme-color);
+    /* background: var(--theme-color); */
     top: 0
 }
 

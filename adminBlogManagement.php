@@ -83,21 +83,21 @@ include_once "leftBar.php";
                                 <div class="row mb-5">
                                     <div class="col12">
                                         <div class="p-2" style="overflow-x: scroll;">
-                                            <table id="blogDetailsTable" class="table table-striped table-hover table-bordered display">
+                                            <table id="blogTable" class="table table-striped table-hover table-bordered display" style="width:100%;">
                                                 <thead class="table-dark">
                                                     <tr>
-                                                        <th>Sr. No</th>
+                                                        <th>#</th>
                                                         <th>Title</th>
                                                         <th>Category</th>
-                                                        <th>Author Name</th>
-                                                        <th>Thumbnail</th>
+                                                        <th>Author</th>
+                                                        <th>Image</th>
                                                         <th>Content</th>
-                                                        <th>Actions</th>
+                                                        <th>Action</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody id="blogBodyId">
-                                                </tbody>
+                                                <tbody id="blogBodyId"></tbody>
                                             </table>
+
                                         </div>
                                     </div>
                                 </div>

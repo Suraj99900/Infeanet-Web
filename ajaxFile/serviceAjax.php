@@ -86,9 +86,12 @@ if ($sFlag == 'fetchAll') {
 
     $category = Input::request('category') ?: "";
     $title = Input::request('title') ?: "";
+    $sOrder   = Input::request("order")?:"DESC";
+    $iLimit   = Input::request("limit")?:"";
+    $iStatus  = Input::request("status")?:"";
 
     $service = new ServiceManage();
-    $data    = $service->fetchAll($title,$category);
+    $data    = $service->fetchAll($title,$category,$iStatus,$sOrder,$iLimit);
 
     echo json_encode(["status" => "success", "data" => $data]);
 }

@@ -42,32 +42,58 @@ $(document).ready(function () {
         });
     });
 
-
+    let notesTable;
+    notesTable = $("#notesTable").DataTable({
+        destroy: true,
+        responsive: true,
+        autoWidth: false,
+        columnDefs: [
+            { orderable: false, targets: [5, 7] } // disable sorting on File & Action
+        ]
+    });
     // Load Notes Table
     function loadNotes() {
         $.post("ajaxFile/staffUpload_ajax.php", { sFlag: "fetch" }, function (resp) {
-            let html = "";
+            const table = $("#notesTable").DataTable();
+            table.clear();
+
+            if (!resp.data || resp.data.length === 0) {
+                table.row.add([
+                    "",
+                    `<span class="text-muted small">No notes found</span>`,
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ]);
+                table.draw();
+                return;
+            }
 
             resp.data.forEach((row, index) => {
-                html += `
-                    <tr>
-                        <td>${row.id}</td>
-                        <td>${row.name}</td>
-                        <td>${row.isbn}</td>
-                        <td>${row.semester}</td>
-                        <td>${row.description}</td>
-                        <td><a href="${row.file_path}" target="_blank">View</a></td>
-                        <td>${row.added_on}</td>
-                        <td>
-                            <button class="btn btn-danger btn-sm delete" data-id="${row.id}">
-                                Delete
-                            </button>
-                        </td>
-                    </tr>
-                `;
+                const fileLink = `<a href="${row.file_path}" target="_blank"><i class="fa fa-file"></i> View</a>`;
+
+                const actions = `
+                <button class="btn btn-outline-danger btn-sm delete" data-id="${row.id}" title="Delete">
+                    <i class="fa fa-trash"></i>
+                </button>
+            `;
+
+                table.row.add([
+                    row.id,
+                    row.name,
+                    row.isbn,
+                    row.semester,
+                    row.description,
+                    fileLink,
+                    row.added_on,
+                    actions
+                ]);
             });
 
-            $("#notesBody").html(html);
+            table.draw();
         }, "json");
     }
 

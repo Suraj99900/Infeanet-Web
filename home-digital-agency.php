@@ -178,8 +178,8 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
             <h1 class="hero-title">Solution For You</h1>
             <p class="hero-text">Energistically harness ubiquitous imperatives without state of the art collaboration and idea-sharing. Monotonectally parallel task cross-unit experiences and front-end.</p>
             <div class="btn-group"><a href="about.php" class="th-btn">ABOUT US<i class="fa-regular fa-arrow-right ms-2"></i></a>
-                <div class="call-btn"><a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="play-btn popup-video"><i class="fas fa-play"></i></a>
-                    <div class="media-body"><a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="btn-title popup-video">Watch Our Story</a> <span class="btn-text">Subscribe Now</span></div>
+                <div class="call-btn"><a href="https://www.youtube.com/watch?v=_57DbJTADCE" class="play-btn popup-video"><i class="fas fa-play"></i></a>
+                    <div class="media-body"><a href="https://www.youtube.com/watch?v=_57DbJTADCE" class="btn-title popup-video">Watch Our Story</a> <span class="btn-text">Subscribe Now</span></div>
                 </div>
             </div>
         </div>
@@ -194,7 +194,7 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
         <div class="row align-items-center">
             <div class="col-xl-6 mb-30 mb-xl-0">
                 <div class="img-box4 tilt-active">
-                    <div class="img-shape icon-masking"><span class="mask-icon" data-mask-src="assets/img/normal/about_3_1-shape.png"></span> <img src="assets/img/normal/about_3_1-shape.png" alt="img"></div><img src="assets/img/normal/about_3_1.png" alt="About"> <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="play-btn popup-video"><i class="fas fa-play"></i></a>
+                    <div class="img-shape icon-masking"><span class="mask-icon" data-mask-src="assets/img/normal/about_3_1-shape.png"></span> <img src="assets/img/normal/about_3_1-shape.png" alt="img"></div><img src="assets/img/normal/about_3_1.png" alt="About"> <a href="https://www.youtube.com/watch?v=_57DbJTADCE" class="play-btn popup-video"><i class="fas fa-play"></i></a>
                 </div>
             </div>
             <div class="col-xl-6">
@@ -382,7 +382,7 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
                                 </a>
                             </div>
                             <div class="project-grid_content">
-                                <h3 class="box-title"  style="font-size: 18px;" ><a href="project-details.php">IT Consultancy</a></h3>
+                                <h3 class="box-title" style="font-size: 18px;"><a href="project-details.php">IT Consultancy</a></h3>
                                 <p class="project-grid_text">Providing innovative digital solutions and strategic guidance to empower businesses in the ever-evolving tech landscape.</p>
                             </div>
                         </div>
@@ -391,7 +391,7 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
                         <div class="project-grid">
                             <div class="project-grid_img"><img src="assets/img/project/2.png" alt="project image"> <a href="assets/img/project/2.png" class="play-btn style3 popup-image"><i class="far fa-plus"></i></a></div>
                             <div class="project-grid_content">
-                                <h3 class="box-title"  style="font-size: 18px;"><a href="project-details.php">Developteq: Modern & Tech-Focused Digital Platform</a></h3>
+                                <h3 class="box-title" style="font-size: 18px;"><a href="project-details.php">Developteq: Modern & Tech-Focused Digital Platform</a></h3>
                                 <p class="project-grid_text">The "Developteq" project showcases a sophisticated and cutting-edge web design tailored for a modern, technology-centric business. The visual design immediately communicates innovation and a focus on advanced digital solutions.</p>
                             </div>
                         </div>
@@ -400,7 +400,7 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
                         <div class="project-grid">
                             <div class="project-grid_img"><img src="assets/img/project/3.png" alt="project image"> <a href="assets/img/project/3.png" class="play-btn style3 popup-image"><i class="far fa-plus"></i></a></div>
                             <div class="project-grid_content">
-                                <h3 class="box-title"  style="font-size: 18px;"><a href="project-details.php">Portfolio-Style & Simple & Catchy Concepts</a></h3>
+                                <h3 class="box-title" style="font-size: 18px;"><a href="project-details.php">Portfolio-Style & Simple & Catchy Concepts</a></h3>
                                 <p class="project-grid_text">demonstrating versatility in design approaches for different client needs. It features two distinct website styles, "Portfolio-Style" and "Simple & Catchy," each rendered on a desktop monitor and a responsive mobile interface.</p>
                             </div>
                         </div>
@@ -409,7 +409,7 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
                         <div class="project-grid">
                             <div class="project-grid_img"><img src="assets/img/project/4.png" alt="project image"> <a href="assets/img/project/4.png" class="play-btn style3 popup-image"><i class="far fa-plus"></i></a></div>
                             <div class="project-grid_content">
-                                <h3 class="box-title"  style="font-size: 18px;"><a href="project-details.php">AI Tools & Chat Applications: A Comprehensive Digital Ecosystem </a></h3>
+                                <h3 class="box-title" style="font-size: 18px;"><a href="project-details.php">AI Tools & Chat Applications: A Comprehensive Digital Ecosystem </a></h3>
                                 <p class="project-grid_text">A dual-focused web design, illustrating a robust platform for both advanced AI tools and interactive AI chat applications. The design is displayed on a sleek desktop monitor and two accompanying mobile devices, emphasizing responsive and integrated digital solutions.</p>
                             </div>
                         </div>
@@ -418,7 +418,7 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
                         <div class="project-grid">
                             <div class="project-grid_img"><img src="assets/img/project/5.png" alt="project image"> <a href="assets/img/project/5.png" class="play-btn style3 popup-image"><i class="far fa-plus"></i></a></div>
                             <div class="project-grid_content">
-                                <h3 class="box-title"  style="font-size: 18px;"><a href="project-details.php">Chat AI Intelligence</a></h3>
+                                <h3 class="box-title" style="font-size: 18px;"><a href="project-details.php">Chat AI Intelligence</a></h3>
                                 <p class="project-grid_text">A next-generation conversational platform featuring a smart AI companion designed for seamless interaction, deep learning, and instant support.</p>
                             </div>
                         </div>
@@ -821,7 +821,7 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
         </div>
         <div class="slider-area">
             <div class="swiper th-slider has-shadow" id="blogSlider2" data-slider-options='{"loop":true,"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}}}'>
-                <div class="swiper-wrapper">
+                <div class="swiper-wrapper" id="idBlogContent">
                     <div class="swiper-slide">
                         <div class="blog-card">
                             <div class="blog-img"><img src="assets/img/blog/blog_1_1.jpg" alt="blog image"></div>
@@ -926,11 +926,72 @@ include_once ABS_PATH_TO_PROJECT . "CDN_Footer.php";
 <script>
     $(document).ready(function() {
 
+        function getAllLatestBlog() {
+            $.ajax({
+                url: "ajaxFile/blogAjax.php",
+                method: "GET",
+                data: {
+                    sFlag: "fetchAll",
+                    order: "DESC",
+                    limit: 5,
+                    status: 1,
+                },
+                dataType: "json",
+                success: function(res) {
+                    if (res.status === "success") {
+
+                        let html = "";
+                        let sFooterBlogLink = "";
+
+                        $.each(res.data, function(i, r) {
+                            let shortDesc = r['blog_content'] ?
+                                r['blog_content'].replace(/<[^>]+>/g, '').substring(0, 160) + "..." :
+                                "";
+
+                            html += `<div class="swiper-slide">
+                                        <div class="blog-card">
+                                            <div class="blog-img"><img src="${r['blog_image']}" alt="blog image"></div>
+                                            <div class="blog-content">
+                                                <div class="blog-meta">
+                                                    <a href="blog-details.php?id=${r['id']}">
+                                                        <i class="fal fa-calendar-days"></i>
+                                                            ${r['added_on']}
+                                                    </a> 
+                                                </div>
+                                                <h3 class="box-title" style="text-align: justify;">
+                                                    <a href="blog-details.php?id=${r['id']}">${r['blog_title']}</a>
+                                                </h3>
+                                                <p class="blog-text" style="text-align: justify;">
+                                                    ${shortDesc}
+                                                </p>
+                                                <div class="blog-bottom">
+                                                    <a href="blog-details.php?id=${r['id']}" class="author">
+                                                        <img src="assets/img/blog/author-1-1.png" alt="avater"> By ${r['author_name']}
+                                                    </a> 
+                                                    <a href="blog-details.php?id=${r['id']}" class="line-btn">
+                                                        Read More
+                                                        <i class="fas fa-arrow-right"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>`
+                        });
+
+                        $("#idBlogContent").html(html);
+                    }
+                }
+            });
+        }
+        getAllLatestBlog();
         $.ajax({
             url: "ajaxFile/serviceAjax.php",
             method: "GET",
             data: {
-                sFlag: "fetchAll"
+                sFlag: "fetchAll",
+                order: "DESC",
+                limit: 5,
+                status: 1,
             },
             dataType: "json",
 

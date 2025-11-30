@@ -45,14 +45,22 @@
         if (!path) return "assets/img/product/product_1_1.jpg";
         return path.startsWith("http") ? path : path;
     }
-
+    // let galleryTable = $("#galleryTable").DataTable();
     // ------------------ Render ------------------
     function renderTableRows(rows) {
-        const $body = $("#galleryBody");
-        $body.empty();
+        // Ensure DataTable instance exists
+        const table = $("#galleryTable").DataTable();
+        table.clear(); // Clear existing table rows
 
         if (!Array.isArray(rows) || rows.length === 0) {
-            $body.append(`<tr><td colspan="6" class="text-center small text-muted">No images found.</td></tr>`);
+            table.row.add([
+                "",
+                `<span class="text-muted small">No images found.</span>`,
+                "",
+                "",
+                "",
+                ""
+            ]).draw();
             return;
         }
 
@@ -68,27 +76,32 @@
                 ? `<span class="badge bg-success">Active</span>`
                 : `<span class="badge bg-secondary">Inactive</span>`;
 
-            const $tr = $(`
-            <tr data-id="${escapeHtml(id)}">
-              <td>${idx + 1}</td>
-              <td><img src="${escapeHtml(imageUrl)}" style="width:84px;height:56px;object-fit:cover;border-radius:4px;"></td>
-              <td><div class="fw-bold">${escapeHtml(title)}</div></td>
-              <td>${escapeHtml(category)}</td>
-              <td class="text-center">${statusLabel}</td>
-              <td>
-                <button class="btn btn-sm btn-outline-primary editGalleryBtn" data-id="${escapeHtml(id)}">
-                    <i class="fa fa-pen"></i></button>
-                <button class="btn btn-sm btn-outline-warning toggleStatusBtn" data-id="${escapeHtml(id)}" data-status="${status}">
-                    ${status === 1 ? "Disable" : "Enable"}</button>
-                <button class="btn btn-sm btn-outline-danger deleteGalleryBtn" data-id="${escapeHtml(id)}">
-                    <i class="fa fa-trash"></i></button>
-              </td>
-            </tr>
-            `);
+            // Prepare Action Buttons
+            const actions = `
+            <button class="btn btn-sm btn-outline-primary editGalleryBtn" data-id="${escapeHtml(id)}">
+                <i class="fa fa-pen"></i>
+            </button>
+            <button class="btn btn-sm btn-outline-warning toggleStatusBtn" data-id="${escapeHtml(id)}" data-status="${status}">
+                ${status === 1 ? "Disable" : "Enable"}
+            </button>
+            <button class="btn btn-sm btn-outline-danger deleteGalleryBtn" data-id="${escapeHtml(id)}">
+                <i class="fa fa-trash"></i>
+            </button>
+        `;
 
-            $body.append($tr);
+            table.row.add([
+                idx + 1,
+                `<img src="${escapeHtml(imageUrl)}" style="width:84px;height:56px;object-fit:cover;border-radius:4px;">`,
+                `<div class="fw-bold">${escapeHtml(title)}</div>`,
+                escapeHtml(category),
+                statusLabel,
+                actions
+            ]);
         });
+
+        table.draw(); // Refresh DataTable
     }
+
 
     // ------------------ AJAX functions ------------------
     function loadGallery(filters = {}) {

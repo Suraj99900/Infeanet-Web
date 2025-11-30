@@ -60,60 +60,72 @@ include_once "leftBar.php";
 include_once "cdn_admin_footer.php"; 
 ?>
 <script>
-$(document).ready(function() {
+$(document).ready(function () {
 
-    // Function to fetch documents
+    // Initialize DataTable
+    let documentsTable = $("#documentsTable").DataTable({
+        destroy: true,
+        responsive: true,
+        autoWidth: false,
+        columnDefs: [
+            { orderable: false, targets: [5] } // Disable sorting on Actions column
+        ]
+    });
+
+    // Fetch documents
     function fetchDocuments() {
         $.ajax({
-            url: "ajaxFile/staffUpload_ajax.php",  // PHP script to fetch documents
+            url: "ajaxFile/staffUpload_ajax.php",
             type: "POST",
             data: {
-                class_id: '<?php echo $iClassId ?>',  // classId will be passed from PHP
+                class_id: '<?php echo $iClassId ?>',
                 sFlag: 'fetchByClass',
             },
             dataType: "json",
-            success: function(response) {
-                const tbody = $("#idDocumentsBody");
-                tbody.empty();
+            success: function (response) {
+
+                documentsTable.clear(); // Clear table before adding new rows
 
                 if (response.data.length > 0) {
-                    var iIndex = 1;
-                    response.data.forEach(function(doc) {
-                        
-                        let row = `
-                            <tr>
-                                <td>${iIndex}</td>
-                                <td>${doc.name}</td>
-                                <td>${doc.description}</td>
-                                <td>${doc.semester}</td>
-                                <td>${doc.added_on}</td>
-                                <td>
-                                    <a href="${doc.file_path}" target="_blank" class="btn btn-sm btn-primary">
-                                        <i class="fa-solid fa-download"></i> Download
-                                    </a>
-                                </td>
-                            </tr>
+                    response.data.forEach(function (doc, index) {
+
+                        const downloadBtn = `
+                            <a href="${doc.file_path}" target="_blank" class="btn btn-outline-primary btn-sm">
+                                <i class="fa-solid fa-download"></i>
+                            </a>
                         `;
-                        tbody.append(row);
-                        iIndex++;
+
+                        documentsTable.row.add([
+                            index + 1,
+                            doc.name,
+                            doc.description,
+                            doc.semester,
+                            doc.added_on,
+                            downloadBtn
+                        ]);
                     });
                 } else {
-                    tbody.append(`<tr><td colspan="6" class="text-center">No documents found.</td></tr>`);
+                    documentsTable.row.add([
+                        "",
+                        `<span class="text-muted">No documents found.</span>`,
+                        "",
+                        "",
+                        "",
+                        ""
+                    ]);
                 }
+
+                documentsTable.draw();
             },
-            error: function(xhr, status, error) {
-                console.error("AJAX Error: " + status + " " + error);
+            error: function (xhr, status, error) {
+                console.error("AJAX Error:", status, error);
             }
         });
     }
 
-    // Get class_id from PHP session
-    let classId = typeof window.iClassId !== "undefined" ? window.iClassId : 0;
-
-    // Fetch documents on page load
-    
     fetchDocuments();
 });
+
 
 </script>
 <!-- <script src="controller/viewAllDocumentsController.js"></script> -->
