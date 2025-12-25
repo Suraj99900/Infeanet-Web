@@ -5,7 +5,60 @@ include_once ABS_PATH_TO_PROJECT . 'CDN_Header.php';
 include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
 ?>
 
-<div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcumb-bg.jpg">
+<style>
+    .course-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .course-thumb {
+        width: 100%;
+        height: 200px;
+        /* SAME height for all */
+        object-fit: cover;
+        /* crop without distortion */
+        border-radius: 8px;
+    }
+
+    .course-card .card-body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .course-card .card-title {
+        min-height: 80px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .course-card .card-text {
+        min-height: 4.6em;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .course-footer {
+        margin-top: auto;
+    }
+
+    .course-card {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+    }
+
+    .course-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+<div class="breadcumb-wrapper" data-bg-src="assets/img/bg/hum3.png">
     <div class="container">
         <div class="breadcumb-content">
             <h1 class="breadcumb-title">Courses</h1>

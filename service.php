@@ -6,7 +6,63 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
 
 ?>
 
-<div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcumb-bg.jpg">
+<style>
+    .service-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 30px;
+}
+
+.shape-icon {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shape-icon img {
+    max-height: 60px;
+    object-fit: contain;
+}
+.service-card .box-title {
+    min-height: 56px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.service-card_text {
+    min-height: 96px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-align: justify;
+}
+
+.service-card .th-btn {
+    margin-top: auto;
+}
+
+.service-card .bg-shape {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.service-card_number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    opacity: 0.08;
+}
+
+</style>
+
+<div class="breadcumb-wrapper" data-bg-src="assets/img/bg/hum3.png">
     <div class="container">
         <div class="breadcumb-content">
             <h1 class="breadcumb-title">Services</h1>

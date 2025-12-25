@@ -36,8 +36,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- TinyMCE -->
-    <script src="https://cdn.tiny.cloud/1/87ziajgslefznkwf0ger86nt82bwwz9qiuc2gqpfazqa5etr/tinymce/8/tinymce.min.js" referrerpolicy="origin"></script>
-
+    <!-- <script src="https://cdn.tiny.cloud/1/87ziajgslefznkwf0ger86nt82bwwz9qiuc2gqpfazqa5etr/tinymce/8/tinymce.min.js" referrerpolicy="origin"></script> -->
+    <script src="res/js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
     <?php
     if (isset($_GET['message'])) {
         echo "<script>alert('" . htmlspecialchars($_GET['message']) . "');</script>";

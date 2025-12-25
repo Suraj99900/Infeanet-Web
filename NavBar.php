@@ -8,6 +8,28 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 ?>
 
+<style>
+    .footer-widget .menu li {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .footer-widget .menu li a {
+        flex: 1;
+    }
+
+    .footer-widget .menu li a {
+        display: block;
+        white-space: normal;
+        /* allow wrap */
+        word-break: break-word;
+        /* break long words */
+        line-height: 1.5;
+        max-width: 260px;
+        /* adjust as per footer width */
+    }
+</style>
+
 <body>
     <div class="cursor"></div>
     <div class="cursor2"></div>
@@ -32,9 +54,9 @@ if (session_status() == PHP_SESSION_NONE) {
             </div>
         </div>
     </div>
-    <div class="popup-search-box d-none d-lg-block"><button class="searchClose"><i class="fal fa-times"></i></button>
+    <!-- <div class="popup-search-box d-none d-lg-block"><button class="searchClose"><i class="fal fa-times"></i></button>
         <form action="#"><input type="text" placeholder="What are you looking for?"> <button type="submit"><i class="fal fa-search"></i></button></form>
-    </div>
+    </div> -->
     <div class="th-menu-wrapper">
         <div class="th-menu-area text-center"><button class="th-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo" style="width: 60%;margin: auto;height: auto; background-color: white;"><a class="icon-masking" href="index.php"><span data-mask-src="assets/img/icon/logo.svg" class="mask-icon"></span><img src="assets/img/icon/logo.svg" alt="Webteck"></a></div>
@@ -51,15 +73,15 @@ if (session_status() == PHP_SESSION_NONE) {
                     </li>
                     <!-- <li><a href="course.php">Course</a>
                     </li> -->
-                    <li class="menu-item-has-children"><a href="#">Pages</a>
+                    <li class="menu-item-has-children"><a href="#">Students resources</a>
                         <ul class="sub-menu">
-                            <li><a href="course.php">Course</a>
+                            <li><a href="course.php">Skills hub</a>
                             </li>
-                            <li><a href="gallery.php">Gallery</a></li>
+                            <li><a href="gallery.php">Our journey</a></li>
                             <li><a href="faq.php">Faq Page</a></li>
                         </ul>
                     </li>
-                    <li><a href="blog.php">Blog</a>
+                    <li><a href="blog.php">Blogs</a>
                     </li>
                     <li><a href="contact.php">Contact</a></li>
                     <?php
@@ -79,18 +101,23 @@ if (session_status() == PHP_SESSION_NONE) {
     <header class="th-header header-layout2">
         <div class="header-top">
             <div class="container">
-                <div class="row justify-content-center justify-content-lg-between align-items-center gy-2">
+                <div class="row justify-content-center justify-content-lg-between align-items-center gy-2 ">
                     <div class="col-auto d-none d-lg-block">
                         <div class="header-links">
                             <ul>
-                                <li><i class="fas fa-map-location"></i>Dhayari Gao, SHOP NO 4, Garmal, Dhayari Phata, Pune, Maharashtra 411041, India</li>
+                                <li ><i class="fas fa-map-location"></i><span>Wagholi / Dhankawadi, Pune, Maharashtra</span></li>
                                 <li><i class="fas fa-phone"></i><a href="tel:+91 9284187968">+91 9284187968</a></li>
                                 <li><i class="fas fa-envelope"></i><a href="mailto:rutujas@infeanet.com">rutujas@infeanet.com</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-auto">
-                        <div class="header-social"><span class="social-title">Follow Us On : </span><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a> <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a> <a href="https://www.linkedin.com/in/rutuja-sathe-52139511a/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a> <a href="https://www.instagram.com/infeanet?igsh=MWlqc2x1b2JtOTMzOA%3D%3D"><i class="fab fa-instagram"></i></a> <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a></div>
+                        <div class="header-social">
+                            <span class="social-title">Follow Us On : </span>
+                                <a href="https://www.facebook.com/groups/1570750129662692/"><i class="fab fa-facebook-f"></i></a> 
+                                <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a> 
+                                <a href="https://in.linkedin.com/company/infeanet-digital-solution-and-web-media"><i class="fab fa-linkedin-in"></i></a> <a href="https://www.instagram.com/infeanet/?hl=en"><i class="fab fa-instagram"></i></a> 
+                                <a href="https://www.youtube.com/@infeanetdigitalmarketing"><i class="fab fa-youtube"></i></a></div>
                     </div>
                 </div>
             </div>
@@ -100,7 +127,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 <div class="container">
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto">
-                            <div class="header-logo" style="width: 170px;"><a class="icon-masking" href="index.php"><span data-mask-src="assets/img/icon/logo.svg" class="mask-icon"></span><img src="assets/img/icon/logo.svg" alt="Webteck"></a></div>
+                            <div class="header-logo" style="width: 200px;"><a class="icon-masking" href="index.php"><span data-mask-src="assets/img/icon/logo.svg" class="mask-icon"></span><img src="assets/img/icon/logo.svg" alt="Webteck"></a></div>
                         </div>
                         <div class="col-auto">
                             <nav class="main-menu d-none d-lg-inline-block">
@@ -115,15 +142,15 @@ if (session_status() == PHP_SESSION_NONE) {
                                             <li><a href="service-details.php">Services Details</a></li>
                                         </ul> -->
                                     </li>
-                                    <li class="menu-item-has-children"><a href="#">Students</a>
+                                    <li class="menu-item-has-children"><a href="#">Students resources</a>
                                         <ul class="sub-menu">
-                                            <li><a href="course.php">Course</a>
+                                            <li><a href="course.php">Skills hub</a>
                                             </li>
-                                            <li><a href="gallery.php">Gallery</a></li>
+                                            <li><a href="gallery.php">Our journey</a></li>
                                             <li><a href="faq.php">Faq Page</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="blog.php">Blog</a>
+                                    <li><a href="blog.php">Blogs</a>
 
                                     </li>
                                     <!-- <li><a href="career.php">career</a></li> -->
@@ -143,9 +170,9 @@ if (session_status() == PHP_SESSION_NONE) {
                         </div>
                         <div class="col-auto d-none d-lg-block">
                             <div class="header-button">
-                                <button type="button" class="icon-btn searchBoxToggler">
+                                <!-- <button type="button" class="icon-btn searchBoxToggler">
                                     <i class="far fa-search"></i>
-                                </button>
+                                </button> -->
                                 <!-- <button type="button" class="icon-btn sideMenuToggler">
                                     <i class="far fa-shopping-cart"></i>
                                     <span class="badge">5</span>

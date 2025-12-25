@@ -6,7 +6,7 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
 
 ?>
 
-<div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcumb-bg.jpg">
+<div class="breadcumb-wrapper" data-bg-src="assets/img/bg/hum3.png">
     <div class="container">
         <div class="breadcumb-content">
             <h1 class="breadcumb-title">Shop Details</h1>

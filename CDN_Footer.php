@@ -38,8 +38,8 @@
                             </a>
                         </div>
                         <div class="th-widget-about">
-                            <p class="about-text">Professionally redefine transparent ROI through low-risk high-yield imperatives. Progressively create empowered. cost effective users via team driven.</p>
-                            <div class="th-social"><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a> <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a> <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a> <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a> <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a></div>
+                            <p class="about-text" style="color: white;">Professionally redefine transparent ROI through low-risk high-yield imperatives. Progressively create empowered. cost effective users via team driven.</p>
+                            <div class="th-social"><a href="https://www.facebook.com/groups/1570750129662692/"><i class="fab fa-facebook-f"></i></a> <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a> <a href="https://in.linkedin.com/company/infeanet-digital-solution-and-web-media"><i class="fab fa-linkedin-in"></i></a> <a href="https://www.instagram.com/infeanet/?hl=en"><i class="fab fa-instagram"></i></a> <a href="https://www.youtube.com/@infeanetdigitalmarketing"><i class="fab fa-youtube"></i></a></div>
                         </div>
                     </div>
                 </div>
@@ -49,8 +49,8 @@
                         <div class="menu-all-pages-container">
                             <ul class="menu">
                                 <li><a href="about.php">About Us</a></li>
-                                <li><a href="service.php">Service</a></li>
-                                <li><a href="blog.php">Blog</a></li>
+                                <li><a href="service.php">Services</a></li>
+                                <li><a href="blog.php">Blogs</a></li>
                                 <li><a href="faq.php">Help & FAQs</a></li>
                                 <li><a href="contact.php">Contact Us</a></li>
                             </ul>
@@ -200,10 +200,12 @@
 
                     let html = "";
                     res.data.forEach(s => {
-                        let sTitle = s['service_title'] ?
-                            s['service_title'].replace(/<[^>]+>/g, '').substring(0, 30):
-                            "";
-                        html += `<li><a href="service-details.php?id=${s['id']}">${sTitle}</a></li>`;
+                        html += `
+                            <li>
+                                <a href="service-details.php?id=${s.id}">
+                                    ${s.service_title}
+                                </a>
+                            </li>`;
                     });
 
                     $("#serviceLinkId").html(html);

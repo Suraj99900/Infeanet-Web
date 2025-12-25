@@ -238,7 +238,7 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
     }
 </style>
 
-<div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcumb-bg.jpg">
+<div class="breadcumb-wrapper" data-bg-src="assets/img/bg/hum3.png">
     <div class="container">
         <div class="breadcumb-content">
             <h1 class="breadcumb-title">About Us</h1>
@@ -257,7 +257,7 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
                     <div class="img1"><img src="assets/img/normal/about_1_1.png" alt="About"></div>
                     <div class="shape1"><img src="assets/img/normal/about_shape_1.png" alt="shape"></div>
                     <div class="year-counter">
-                        <h3 class="year-counter_number"><span class="counter-number">25</span></h3>
+                        <h3 class="year-counter_number"><span class="counter-number">11</span></h3>
                         <p class="year-counter_text">Years Experience</p>
                     </div>
                 </div>
@@ -342,7 +342,7 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
         <!-- RIGHT IMAGE -->
         <div class="col-lg-6 text-center">
             <div class="image-card">
-                <img src="assets/Images/img22.jpeg" alt="Rutuja Sathe" class="founder-img">
+                <img src="assets/Images/sathe.png" alt="Rutuja Sathe" class="founder-img">
             </div>
         </div>
     </div>

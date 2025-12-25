@@ -4,6 +4,58 @@ include_once ABS_PATH_TO_PROJECT . "classes/sessionCheck.php";
 include_once ABS_PATH_TO_PROJECT . 'CDN_Header.php';
 include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
 
+$teamMembers = [
+    [
+        "name" => "Shrutika",
+        "role" => "Student",
+        "image" => "assets/Images/students/shrutika_infeanet.png"
+    ],
+    [
+        "name" => "Priya",
+        "role" => "Student",
+        "image" => "assets/Images/students/priya_infeanet.png"
+    ],
+    [
+        "name" => "Aditya",
+        "role" => "Student",
+        "image" => "assets/Images/students/aditya_infeanet.png"
+    ],
+    [
+        "name" => "Aniket",
+        "role" => "Student",
+        "image" => "assets/Images/students/aniket_infeanet.png"
+    ],
+    [
+        "name" => "Atharva",
+        "role" => "Student",
+        "image" => "assets/Images/students/atharva_infeanet.png"
+    ],
+    [
+        "name" => "Hiren",
+        "role" => "Student",
+        "image" => "assets/Images/students/hiren_infeanet.png"
+    ],
+    [
+        "name" => "Dnyanesh",
+        "role" => "Student",
+        "image" => "assets/Images/students/dnyanesh_infeanet.png"
+    ],
+    [
+        "name" => "Hitesh",
+        "role" => "Student",
+        "image" => "assets/Images/students/hitesh_infeanet.png"
+    ],
+    [
+        "name" => "Mrunali",
+        "role" => "Student",
+        "image" => "assets/Images/students/mrunali_infeanet.png"
+    ],
+    [
+        "name" => "Ritu",
+        "role" => "Student",
+        "image" => "assets/Images/students/ritu_infeanet.png"
+    ],
+];
 ?>
 
 <style>
@@ -164,6 +216,123 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
             transform: scale(1);
             opacity: 0.7;
         }
+    }
+
+    .team-img {
+        width: 100%;
+        height: 400px;
+        /* SAME HEIGHT FOR ALL */
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .team-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* MAGIC LINE */
+        display: block;
+    }
+
+    .blog-img {
+        height: 220px;
+        overflow: hidden;
+    }
+
+    .blog-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .blog-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .blog-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .blog-card .box-title {
+        min-height: 100px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .blog-card .blog-text {
+        min-height: 72px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .blog-bottom {
+        margin-top: auto;
+    }
+
+    /* Card base */
+    .service-grid {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Content wrapper */
+    .service-grid_content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 25px;
+    }
+
+    /* Icon area – same size */
+    .service-top-icon {
+        height: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* Title – clamp to 2 lines */
+    .service-grid .box-title {
+        min-height: 66px;
+        display: -webkit-box;
+        text-align: center;
+        align-content: center;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* Description – clamp to 4 lines */
+    .service-grid_text {
+        min-height: 100px;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-align: justify;
+    }
+
+    /* Button always at bottom */
+    .service-grid .th-btn {
+        margin-top: auto;
+    }
+
+    /* Background shape stays fixed */
+    .service-grid .bg-shape {
+        position: absolute;
+        bottom: 0;
+        right: 0;
     }
 </style>
 
@@ -376,50 +545,50 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
                     <div class="swiper-slide">
                         <div class="project-grid">
                             <div class="project-grid_img">
-                                <img src="assets/img/project/1.png" alt="IT Consultancy project image">
-                                <a href="assets/img/project/1.png" class="play-btn style3 popup-image">
+                                <img src="assets/img/icon/image.png" alt="SmartFee – School Fee Management System">
+                                <a href="assets/img/icon/image.png" class="play-btn style3 popup-image">
                                     <i class="far fa-plus"></i>
                                 </a>
                             </div>
                             <div class="project-grid_content">
-                                <h3 class="box-title" style="font-size: 18px;"><a href="project-details.php">IT Consultancy</a></h3>
-                                <p class="project-grid_text">Providing innovative digital solutions and strategic guidance to empower businesses in the ever-evolving tech landscape.</p>
+                                <h3 class="box-title" style="font-size: 18px;"><a href="">SmartFee – School Fee Management System</a></h3>
+                                <p class="project-grid_text" style="text-align: justify;">A secure web platform built for a private school to manage online fee payments, receipts, student records, and admin reports, reducing manual work and payment delays.</p>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="project-grid">
-                            <div class="project-grid_img"><img src="assets/img/project/2.png" alt="project image"> <a href="assets/img/project/2.png" class="play-btn style3 popup-image"><i class="far fa-plus"></i></a></div>
+                            <div class="project-grid_img"><img src="assets/img/icon/image1.png" alt="project image"> <a href="assets/img/icon/image1.png" class="play-btn style3 popup-image"><i class="far fa-plus"></i></a></div>
                             <div class="project-grid_content">
-                                <h3 class="box-title" style="font-size: 18px;"><a href="project-details.php">Developteq: Modern & Tech-Focused Digital Platform</a></h3>
-                                <p class="project-grid_text">The "Developteq" project showcases a sophisticated and cutting-edge web design tailored for a modern, technology-centric business. The visual design immediately communicates innovation and a focus on advanced digital solutions.</p>
+                                <h3 class="box-title" style="font-size: 18px;"><a href="">VyaparSetu – MSME Business Website & Lead System</a></h3>
+                                <p class="project-grid_text" style="text-align: justify;">Developed a responsive business website for a local manufacturing MSME with inquiry forms, WhatsApp integration, and SEO optimization to improve online visibility and lead generation.</p>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="project-grid">
-                            <div class="project-grid_img"><img src="assets/img/project/3.png" alt="project image"> <a href="assets/img/project/3.png" class="play-btn style3 popup-image"><i class="far fa-plus"></i></a></div>
+                            <div class="project-grid_img"><img src="assets/img/icon/image2.png" alt="project image"> <a href="assets/img/icon/image2.png" class="play-btn style3 popup-image"><i class="far fa-plus"></i></a></div>
                             <div class="project-grid_content">
-                                <h3 class="box-title" style="font-size: 18px;"><a href="project-details.php">Portfolio-Style & Simple & Catchy Concepts</a></h3>
-                                <p class="project-grid_text">demonstrating versatility in design approaches for different client needs. It features two distinct website styles, "Portfolio-Style" and "Simple & Catchy," each rendered on a desktop monitor and a responsive mobile interface.</p>
+                                <h3 class="box-title" style="font-size: 18px;"><a href="">EduTrack – Coaching Institute Management Portal</a></h3>
+                                <p class="project-grid_text" style="text-align: justify;">A custom web solution for a coaching institute (Classes 7–12) to manage student admissions, batch scheduling, attendance, and performance tracking from a single dashboard.</p>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="project-grid">
-                            <div class="project-grid_img"><img src="assets/img/project/4.png" alt="project image"> <a href="assets/img/project/4.png" class="play-btn style3 popup-image"><i class="far fa-plus"></i></a></div>
+                            <div class="project-grid_img"><img src="assets/img/icon/image4.png" alt="project image"> <a href="assets/img/icon/image4.png" class="play-btn style3 popup-image"><i class="far fa-plus"></i></a></div>
                             <div class="project-grid_content">
-                                <h3 class="box-title" style="font-size: 18px;"><a href="project-details.php">AI Tools & Chat Applications: A Comprehensive Digital Ecosystem </a></h3>
-                                <p class="project-grid_text">A dual-focused web design, illustrating a robust platform for both advanced AI tools and interactive AI chat applications. The design is displayed on a sleek desktop monitor and two accompanying mobile devices, emphasizing responsive and integrated digital solutions.</p>
+                                <h3 class="box-title" style="font-size: 18px;"><a href="">AgroMart Connect – Farmer-to-Retail Digital Platform</a></h3>
+                                <p class="project-grid_text" style="text-align: justify;">Designed a simple digital platform connecting local farmers with retailers, featuring product listings, inquiry management, and mobile-friendly access for rural users.</p>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="project-grid">
-                            <div class="project-grid_img"><img src="assets/img/project/5.png" alt="project image"> <a href="assets/img/project/5.png" class="play-btn style3 popup-image"><i class="far fa-plus"></i></a></div>
+                            <div class="project-grid_img"><img src="assets/img/icon/image5.png" alt="project image"> <a href="assets/img/icon/image5.png" class="play-btn style3 popup-image"><i class="far fa-plus"></i></a></div>
                             <div class="project-grid_content">
-                                <h3 class="box-title" style="font-size: 18px;"><a href="project-details.php">Chat AI Intelligence</a></h3>
-                                <p class="project-grid_text">A next-generation conversational platform featuring a smart AI companion designed for seamless interaction, deep learning, and instant support.</p>
+                                <h3 class="box-title" style="font-size: 18px;"><a href="">HireRight India – Resume Screening & Job Portal Module</a></h3>
+                                <p class="project-grid_text" style="text-align: justify;">Designed a simple digital AI-assisted job portal module for a recruitment firm to streamline resume screening, job postings, and candidate shortlisting, improving hiring efficiency.</p>
                             </div>
                         </div>
                     </div>
@@ -436,7 +605,7 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
                     <div class="counter-card_icon"><img src="assets/img/icon/counter_1_1.svg" alt="Icon"></div>
                     <div class="media-body">
                         <h2 class="counter-card_number"><span class="counter-number">986</span>+</h2>
-                        <p class="counter-card_text">Finished Project</p>
+                        <p class="counter-card_text">Finished Projects</p>
                     </div>
                 </div>
             </div>
@@ -524,40 +693,41 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
                 <div class="swiper th-slider" id="brandSlider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":2},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"3"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"4"},"1400":{"slidesPerView":"5"}}}'>
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="brand-box py-20"><img src="assets/img/brand/brand_2_1.png" alt="Brand Logo"></div>
+                            <div class="brand-box py-20"><img src="assets/img/sister_1.png" alt="Brand Logo" style="width: 90px; height: 60px;"></div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="brand-box py-20"><img src="assets/img/brand/brand_2_2.png" alt="Brand Logo"></div>
+                            <div class="brand-box py-20"><img src="assets/img/sister_2.png" alt="Brand Logo" style="width: 90px; height: 60px;"></div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="brand-box py-20"><img src="assets/img/brand/brand_2_3.png" alt="Brand Logo"></div>
+                            <div class="brand-box py-20"><img src="assets/img/sister_3.png" alt="Brand Logo" style="width: 90px; height: 60px;"></div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="brand-box py-20"><img src="assets/img/brand/brand_2_4.png" alt="Brand Logo"></div>
+                            <div class="brand-box py-20"><img src="assets/img/sister_4.png" alt="Brand Logo" style="width: 90px; height: 60px;"></div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="brand-box py-20"><img src="assets/img/brand/brand_2_5.png" alt="Brand Logo"></div>
+                            <div class="brand-box py-20"><img src="assets/img/sister_5.png" alt="Brand Logo" style="width: 90px; height: 60px;"></div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="brand-box py-20"><img src="assets/img/brand/brand_2_6.png" alt="Brand Logo"></div>
+                            <div class="brand-box py-20"><img src="assets/img/sister_6.png" alt="Brand Logo" style="width: 90px; height: 60px;"></div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="brand-box py-20"><img src="assets/img/sister_1.png" alt="Brand Logo" style="width: 90px; height: 60px;"></div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="brand-box py-20"><img src="assets/img/brand/brand_2_1.png" alt="Brand Logo"></div>
+                            <div class="brand-box py-20"><img src="assets/img/sister_2.png" alt="Brand Logo" style="width: 90px; height: 60px;"></div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="brand-box py-20"><img src="assets/img/brand/brand_2_2.png" alt="Brand Logo"></div>
+                            <div class="brand-box py-20"><img src="assets/img/sister_3.png" alt="Brand Logo" style="width: 90px; height: 60px;"></div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="brand-box py-20"><img src="assets/img/brand/brand_2_3.png" alt="Brand Logo"></div>
+                            <div class="brand-box py-20"><img src="assets/img/sister_4.png" alt="Brand Logo" style="width: 90px; height: 60px;"></div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="brand-box py-20"><img src="assets/img/brand/brand_2_4.png" alt="Brand Logo"></div>
+                            <div class="brand-box py-20"><img src="assets/img/sister_5.png" alt="Brand Logo" style="width: 90px; height: 60px;"></div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="brand-box py-20"><img src="assets/img/brand/brand_2_5.png" alt="Brand Logo"></div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-box py-20"><img src="assets/img/brand/brand_2_6.png" alt="Brand Logo"></div>
+                            <div class="brand-box py-20"><img src="assets/img/sister_6.png" alt="Brand Logo" style="width: 90px; height: 60px;"></div>
                         </div>
                     </div>
                 </div><button data-slider-prev="#brandSlider1" class="slider-arrow style3 slider-prev"><i class="far fa-arrow-left"></i></button> <button data-slider-next="#brandSlider1" class="slider-arrow style3 slider-next"><i class="far fa-arrow-right"></i></button>
@@ -567,104 +737,53 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
     <div class="container space">
         <div class="title-area text-center">
             <div class="shadow-title">Team</div><span class="sub-title">
-                <div class="icon-masking me-2"><span class="mask-icon" data-mask-src="assets/img/theme-img/title_shape_2.svg"></span> <img src="assets/img/theme-img/title_shape_2.svg" alt="shape"></div>GREAT TEAM
+                <div class="icon-masking me-2"><span class="mask-icon" data-mask-src="assets/img/theme-img/title_shape_2.svg"></span> <img src="assets/img/theme-img/title_shape_2.svg" alt="shape"></div>GREAT Stars
             </span>
-            <h2 class="sec-title">See Our Skilled Expert <span class="text-theme">Team</span></h2>
+            <h2 class="sec-title">Our Bright <span class="text-theme">Stars</span></h2>
         </div>
         <div class="slider-area">
-            <div class="swiper th-slider has-shadow" id="teamSlider1" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"2"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"3"},"1200":{"slidesPerView":"3"}}}'>
+            <div class="swiper th-slider has-shadow" id="teamSlider1"
+                data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":2},"768":{"slidesPerView":2},"992":{"slidesPerView":3},"1200":{"slidesPerView":3}}}'>
+
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="th-team team-grid">
-                            <div class="team-img"><img src="assets/img/team/team_3_1.jpg" alt="Team"></div>
-                            <div class="team-social">
-                                <div class="play-btn"><i class="far fa-plus"></i></div>
-                                <div class="th-social"><a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a> <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a> <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a> <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a></div>
+
+                    <?php foreach ($teamMembers as $index => $member): ?>
+                        <div class="swiper-slide">
+                            <div class="th-team team-grid">
+
+                                <div class="team-img">
+                                    <img src="<?= $member['image']; ?>" alt="<?= $member['name']; ?>">
+                                </div>
+
+                                <div class="team-social">
+                                    <!-- <div class="play-btn"><i class="far fa-plus"></i></div> -->
+                                </div>
+
+                                <h3 class="box-title">
+                                    <a href="team-details.php"><?= $member['name']; ?></a>
+                                </h3>
+
+                                <span class="team-desig"><?= $member['role']; ?></span>
+
+                                <!-- Particle ID -->
+                                <div class="box-particle" id="team-<?= $index + 1; ?>"></div>
+
                             </div>
-                            <h3 class="box-title"><a href="team-details.php">Rayan Athels</a></h3><span class="team-desig">Founder & CEO</span>
-                            <div class="box-particle" id="team-p1"></div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="th-team team-grid">
-                            <div class="team-img"><img src="assets/img/team/team_3_2.jpg" alt="Team"></div>
-                            <div class="team-social">
-                                <div class="play-btn"><i class="far fa-plus"></i></div>
-                                <div class="th-social"><a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a> <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a> <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a> <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a></div>
-                            </div>
-                            <h3 class="box-title"><a href="team-details.php">Alex Furnandes</a></h3><span class="team-desig">Project Manager</span>
-                            <div class="box-particle" id="team-p2"></div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="th-team team-grid">
-                            <div class="team-img"><img src="assets/img/team/team_3_3.jpg" alt="Team"></div>
-                            <div class="team-social">
-                                <div class="play-btn"><i class="far fa-plus"></i></div>
-                                <div class="th-social"><a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a> <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a> <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a> <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a></div>
-                            </div>
-                            <h3 class="box-title"><a href="team-details.php">Mary Crispy</a></h3><span class="team-desig">Cheif Expert</span>
-                            <div class="box-particle" id="team-p3"></div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="th-team team-grid">
-                            <div class="team-img"><img src="assets/img/team/team_3_4.jpg" alt="Team"></div>
-                            <div class="team-social">
-                                <div class="play-btn"><i class="far fa-plus"></i></div>
-                                <div class="th-social"><a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a> <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a> <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a> <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a></div>
-                            </div>
-                            <h3 class="box-title"><a href="team-details.php">Henry Joshep</a></h3><span class="team-desig">Product Manager</span>
-                            <div class="box-particle" id="team-p4"></div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="th-team team-grid">
-                            <div class="team-img"><img src="assets/img/team/team_3_1.jpg" alt="Team"></div>
-                            <div class="team-social">
-                                <div class="play-btn"><i class="far fa-plus"></i></div>
-                                <div class="th-social"><a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a> <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a> <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a> <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a></div>
-                            </div>
-                            <h3 class="box-title"><a href="team-details.php">Rayan Athels</a></h3><span class="team-desig">Founder & CEO</span>
-                            <div class="box-particle" id="team-p1"></div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="th-team team-grid">
-                            <div class="team-img"><img src="assets/img/team/team_3_2.jpg" alt="Team"></div>
-                            <div class="team-social">
-                                <div class="play-btn"><i class="far fa-plus"></i></div>
-                                <div class="th-social"><a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a> <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a> <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a> <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a></div>
-                            </div>
-                            <h3 class="box-title"><a href="team-details.php">Alex Furnandes</a></h3><span class="team-desig">Project Manager</span>
-                            <div class="box-particle" id="team-p2"></div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="th-team team-grid">
-                            <div class="team-img"><img src="assets/img/team/team_3_3.jpg" alt="Team"></div>
-                            <div class="team-social">
-                                <div class="play-btn"><i class="far fa-plus"></i></div>
-                                <div class="th-social"><a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a> <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a> <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a> <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a></div>
-                            </div>
-                            <h3 class="box-title"><a href="team-details.php">Mary Crispy</a></h3><span class="team-desig">Cheif Expert</span>
-                            <div class="box-particle" id="team-p3"></div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="th-team team-grid">
-                            <div class="team-img"><img src="assets/img/team/team_3_4.jpg" alt="Team"></div>
-                            <div class="team-social">
-                                <div class="play-btn"><i class="far fa-plus"></i></div>
-                                <div class="th-social"><a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a> <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a> <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a> <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a></div>
-                            </div>
-                            <h3 class="box-title"><a href="team-details.php">Henry Joshep</a></h3><span class="team-desig">Product Manager</span>
-                            <div class="box-particle" id="team-p4"></div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
+
+
                 </div>
-            </div><button data-slider-prev="#teamSlider1" class="slider-arrow style3 slider-prev"><i class="far fa-arrow-left"></i></button> <button data-slider-next="#teamSlider1" class="slider-arrow style3 slider-next"><i class="far fa-arrow-right"></i></button>
+            </div>
+
+            <button data-slider-prev="#teamSlider1" class="slider-arrow style3 slider-prev">
+                <i class="far fa-arrow-left"></i>
+            </button>
+            <button data-slider-next="#teamSlider1" class="slider-arrow style3 slider-next">
+                <i class="far fa-arrow-right"></i>
+            </button>
         </div>
+
     </div>
     <div class="shape-mockup" data-top="0" data-right="0"><img src="assets/img/shape/tech_shape_1.png" alt="shape"></div>
     <div class="shape-mockup" data-top="0%" data-left="0%"><img src="assets/img/shape/square_1.png" alt="shape"></div>
@@ -681,106 +800,80 @@ include_once ABS_PATH_TO_PROJECT . 'NavBar.php';
             <div class="swiper th-slider has-shadow" id="testiSlider3" data-slider-options='{"loop":true,"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}}}'>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="testi-grid">
-                            <div class="testi-grid_img"><img src="assets/img/testimonial/testi_3_1.jpg" alt="Avater">
+                        <div class="testi-grid testi-equal">
+                            <div class="testi-grid_img"><img src="assets/img/icon/logo5.jpeg" alt="Avater">
                                 <div class="testi-grid_quote"><img src="assets/img/icon/quote_left_3.svg" alt="quote"></div>
                             </div>
                             <div class="testi-grid_review"><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i></div>
                             <div class="testi-grid_content">
-                                <p class="testi-grid_text">Objectively visualize error-free technology for B2B alignment. Monotonectally harness an expanded array of models via effective collaboration. Globally synergize resource sucking value via cutting-edge.</p>
-                                <h3 class="box-title">David Farnandes</h3>
-                                <p class="testi-grid_desig">CEO at Anaton</p>
+                                <p class="testi-grid_text">Infeanet revolutionized our group's digital identity. The custom web platform they built handles our complex operations with ease, while their digital marketing has significantly boosted our brand's authority across the region.</p>
+                                <h3 class="box-title">Girish Nagane</h3>
+                                <p class="testi-grid_desig">P.N. Nagane Group</p>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="testi-grid">
-                            <div class="testi-grid_img"><img src="assets/img/testimonial/testi_3_2.jpg" alt="Avater">
+                        <div class="testi-grid testi-equal">
+                            <div class="testi-grid_img"><img src="assets/img/icon/logo6.jpeg" alt="Avater">
                                 <div class="testi-grid_quote"><img src="assets/img/icon/quote_left_3.svg" alt="quote"></div>
                             </div>
                             <div class="testi-grid_review"><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i></div>
                             <div class="testi-grid_content">
-                                <p class="testi-grid_text">Objectively visualize error-free technology for B2B alignment. Monotonectally harness an expanded array of models via effective collaboration. Globally synergize resource sucking value via cutting-edge.</p>
-                                <h3 class="box-title">Jackline Techie</h3>
-                                <p class="testi-grid_desig">CEO at Kormola</p>
+                                <p class="testi-grid_text">With a legacy dating back to 1995, we needed a partner who respected our history while modernizing our reach. Infeanet delivered a brilliant web app that bridges the gap between our tradition and today’s digital market.</p>
+                                <h3 class="box-title">Mr. Pandurang Shinde</h3>
+                                <p class="testi-grid_desig">PHS</p>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="testi-grid">
-                            <div class="testi-grid_img"><img src="assets/img/testimonial/testi_3_3.jpg" alt="Avater">
+                        <div class="testi-grid testi-equal">
+                            <div class="testi-grid_img"><img src="assets/img/icon/logo7.jpeg" alt="Avater">
                                 <div class="testi-grid_quote"><img src="assets/img/icon/quote_left_3.svg" alt="quote"></div>
                             </div>
                             <div class="testi-grid_review"><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i></div>
                             <div class="testi-grid_content">
-                                <p class="testi-grid_text">Objectively visualize error-free technology for B2B alignment. Monotonectally harness an expanded array of models via effective collaboration. Globally synergize resource sucking value via cutting-edge.</p>
-                                <h3 class="box-title">Abraham Khalil</h3>
-                                <p class="testi-grid_desig">CEO at Anatora</p>
+                                <p class="testi-grid_text">Our mission to 'Conserve Water' needed a strong digital voice. Infeanet built a powerful platform for Pixel Polyplast that effectively showcases our solutions and drives high-quality B2B leads through smart digital marketing.</p>
+                                <h3 class="box-title">Saurabh Sathe</h3>
+                                <p class="testi-grid_desig">Pixel Polyplast</p>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="testi-grid">
-                            <div class="testi-grid_img"><img src="assets/img/testimonial/testi_3_4.jpg" alt="Avater">
+                        <div class="testi-grid testi-equal">
+                            <div class="testi-grid_img"><img src="assets/img/icon/logo4.jpeg" alt="Avater">
                                 <div class="testi-grid_quote"><img src="assets/img/icon/quote_left_3.svg" alt="quote"></div>
                             </div>
                             <div class="testi-grid_review"><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i></div>
                             <div class="testi-grid_content">
-                                <p class="testi-grid_text">Objectively visualize error-free technology for B2B alignment. Monotonectally harness an expanded array of models via effective collaboration. Globally synergize resource sucking value via cutting-edge.</p>
-                                <h3 class="box-title">Md Sumon Mia</h3>
-                                <p class="testi-grid_desig">CEO at Rimasu</p>
+                                <p class="testi-grid_text pb-4">As an NABL accredited laboratory, precision is everything. 1 Infeanet developed a high-performance web app that perfectly manages our testing data. Their technical expertise is truly top-tier.</p>
+                                <h3 class="box-title">Mr. Rajaram</h3>
+                                <p class="testi-grid_desig">Strong Tech</p>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="testi-grid">
-                            <div class="testi-grid_img"><img src="assets/img/testimonial/testi_3_1.jpg" alt="Avater">
+                        <div class="testi-grid testi-equal">
+                            <div class="testi-grid_img"><img src="assets/img/icon/logo2.jpeg" alt="Avater">
                                 <div class="testi-grid_quote"><img src="assets/img/icon/quote_left_3.svg" alt="quote"></div>
                             </div>
                             <div class="testi-grid_review"><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i></div>
                             <div class="testi-grid_content">
-                                <p class="testi-grid_text">Objectively visualize error-free technology for B2B alignment. Monotonectally harness an expanded array of models via effective collaboration. Globally synergize resource sucking value via cutting-edge.</p>
-                                <h3 class="box-title">David Farnandes</h3>
-                                <p class="testi-grid_desig">CEO at Anaton</p>
+                                <p class="testi-grid_text">Being a design studio, our standards for UI/UX were incredibly high. Infeanet exceeded them by building a stunning, high-converting portfolio site and implementing a marketing strategy that keeps our project pipeline full.</p>
+                                <h3 class="box-title">Mrs. Prajakta Patil</h3>
+                                <p class="testi-grid_desig">Ink Mint Studio</p>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="testi-grid">
-                            <div class="testi-grid_img"><img src="assets/img/testimonial/testi_3_2.jpg" alt="Avater">
+                        <div class="testi-grid testi-equal">
+                            <div class="testi-grid_img"><img src="assets/img/icon/logo11.png" alt="Avater">
                                 <div class="testi-grid_quote"><img src="assets/img/icon/quote_left_3.svg" alt="quote"></div>
                             </div>
                             <div class="testi-grid_review"><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i></div>
                             <div class="testi-grid_content">
-                                <p class="testi-grid_text">Objectively visualize error-free technology for B2B alignment. Monotonectally harness an expanded array of models via effective collaboration. Globally synergize resource sucking value via cutting-edge.</p>
-                                <h3 class="box-title">Jackline Techie</h3>
-                                <p class="testi-grid_desig">CEO at Kormola</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="testi-grid">
-                            <div class="testi-grid_img"><img src="assets/img/testimonial/testi_3_3.jpg" alt="Avater">
-                                <div class="testi-grid_quote"><img src="assets/img/icon/quote_left_3.svg" alt="quote"></div>
-                            </div>
-                            <div class="testi-grid_review"><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i></div>
-                            <div class="testi-grid_content">
-                                <p class="testi-grid_text">Objectively visualize error-free technology for B2B alignment. Monotonectally harness an expanded array of models via effective collaboration. Globally synergize resource sucking value via cutting-edge.</p>
-                                <h3 class="box-title">Abraham Khalil</h3>
-                                <p class="testi-grid_desig">CEO at Anatora</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="testi-grid">
-                            <div class="testi-grid_img"><img src="assets/img/testimonial/testi_3_4.jpg" alt="Avater">
-                                <div class="testi-grid_quote"><img src="assets/img/icon/quote_left_3.svg" alt="quote"></div>
-                            </div>
-                            <div class="testi-grid_review"><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i></div>
-                            <div class="testi-grid_content">
-                                <p class="testi-grid_text">Objectively visualize error-free technology for B2B alignment. Monotonectally harness an expanded array of models via effective collaboration. Globally synergize resource sucking value via cutting-edge.</p>
-                                <h3 class="box-title">Md Sumon Mia</h3>
-                                <p class="testi-grid_desig">CEO at Rimasu</p>
+                                <p class="testi-grid_text pb-4">Infeanet provided us with a robust digital solution that simplified our complex product catalog. Their marketing insights helped us reach industrial clients we previously couldn't find online.</p>
+                                <h3 class="box-title ">Mr. Saurav</h3>
+                                <p class="testi-grid_desig">Ether Chemicals</p>
                             </div>
                         </div>
                     </div>
@@ -1010,13 +1103,13 @@ include_once ABS_PATH_TO_PROJECT . "CDN_Footer.php";
                                 </div>
 
                                 <div class="service-grid_content">
-                                    <h3 class="box-title" style="font-size:16px;>
+                                    <h3 class="box-title">
                                         <a href="service-details.php?id=${s.id}">
-                                            ${truncateText(stripHtml(s.service_title),25)}
+                                            ${stripHtml(s.service_title)}
                                         </a>
                                     </h3>
-                                    <p class="service-grid_text" style="text-align: justify;">
-                                        ${truncateText(stripHtml(s.service_description),100)}
+                                    <p class="service-grid_text" style=" text-align: justify;">
+                                        ${truncateText(stripHtml(s.service_description),150)}
                                     </p>
                                     <a href="service-details.php?id=${s.id}" class="th-btn">
                                         Read More <i class="fas fa-arrow-right ms-2"></i>
@@ -1073,15 +1166,15 @@ include_once ABS_PATH_TO_PROJECT . "CDN_Footer.php";
     }
 
     $(document).ready(function() {
-        $(".project-grid_text").each(function() {
+        // $(".project-grid_text").each(function() {
 
-            let fullText = $(this).text().trim(); // Get plain text
-            let maxLength = 120; // Set max characters
+        //     let fullText = $(this).text().trim(); // Get plain text
+        //     let maxLength = 120; // Set max characters
 
-            if (fullText.length > maxLength) {
-                let shortText = fullText.substring(0, maxLength) + "...";
-                $(this).text(shortText);
-            }
-        });
+        //     if (fullText.length > maxLength) {
+        //         let shortText = fullText.substring(0, maxLength) + "...";
+        //         $(this).text(shortText);
+        //     }
+        // });
     });
 </script>

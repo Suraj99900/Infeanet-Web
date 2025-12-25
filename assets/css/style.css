@@ -4113,7 +4113,7 @@ hr.title-line {
     position: absolute;
     height: 100%;
     width: 100%;
-    mix-blend-mode: color;
+    /* mix-blend-mode: color; */
     /* background: var(--theme-color); */
     top: 0
 }
@@ -32839,7 +32839,7 @@ span.select2-selection.select2-selection--single:focus {
     content: '';
     position: absolute;
     inset: 0;
-    background-color: var(--title-color);
+    background-color: #99c2ff;
     border-radius: inherit;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 11px, calc(100% - 70px) 50%, 100% calc(100% - 11px), 100% 100%, 0 100%, 0 calc(100% - 11px), 70px 50%, 0 11px);
     clip-path: polygon(0 0, 100% 0, 100% 11px, calc(100% - 70px) 50%, 100% calc(100% - 11px), 100% 100%, 0 100%, 0 calc(100% - 11px), 70px 50%, 0 11px);
